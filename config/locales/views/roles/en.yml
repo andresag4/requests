@@ -1,0 +1,19 @@
+en:
+  roles:
+    index:
+      title: Roles
+      resource: the role
+      name: Name
+      description: Description
+      key: Key
+      scope: Scope
+      one: Role
+      other: Roles
+      permissions: Permissions
+    form:
+      title: Role
+      role_key: Role key
+      resource: role
+      back: Go to roles
+  breadcrumbs:
+    roles: Roles

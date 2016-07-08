@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gobierno</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sistema de Control de Gestion</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta content='<%= user_signed_in? ? current_user.id : '' %>' name='user-id'/>
+  <%= favicon_link_tag(source='food-logo.png') %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body class="hold-transition skin-blue sidebar-mini">
+<%#= render 'layouts/notifications' %>
+<div class="wrapper">
+  <%#= render 'layouts/top_menu' %>
+  <!-- Left side column. contains the logo and sidebar -->
+  <%#= render 'layouts/side_menu' %>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <%= yield %>
+  </div><!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2016.</strong> All rights
+    reserved.
+  </footer>
+  <%#= render 'layouts/control_sidebar' %>
+  <div class="control-sidebar-bg"></div>
+</div><!-- ./wrapper -->
 </body>
 </html>

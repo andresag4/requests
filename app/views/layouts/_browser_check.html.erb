@@ -1,0 +1,31 @@
+<% if browser_valid?(browser) %>
+    <div class="col-md-6 col-lg-offset-3 browser-container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>
+            <%= t('.title', name: browser.name, version: browser.version) %>
+          </h1>
+          <p><%= t '.message_html' %></p>
+        </div>
+      </div>
+      <div class="row browser-icons">
+        <div class="col-md-4">
+          <a href="https://www.google.com.mx/chrome/browser/desktop/">
+            <i class="fa fa-chrome"></i>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://www.mozilla.org/firefox/new/">
+            <i class="fa fa-firefox"></i>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48126">
+            <i class="fa fa-edge"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <%= yield %>
+<% end %>

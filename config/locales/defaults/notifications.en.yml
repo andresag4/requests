@@ -1,0 +1,54 @@
+en:
+  notifications_masc:
+    info:
+      permissions_assigned: Permissions were totally assigned.
+    success:
+      resource:
+        created: The %{resource} was created correctly.
+        updated: The %{resource} was updated correctly.
+        destroyed: The %{resource} was destroyed correctly.
+        logical_delete: The %{resource} was deactivated.
+        restored: The %{resource} was restored correctly.
+      file:
+        destroyed: The file was destroyed correctly.
+    alert:
+      resource:
+        dependencies: It's not possible to destroy the %{resource} because of its dependencies.
+        destroyed: The %{resource} couldn't be destroyed.
+        topic_dependency: It's not possible to destroy the topic %{resource} because it has pages associated.
+        role_dependency: It's not possible to destroy the role %{resource} because some users have it associated.
+        theme_dependency: It's not possible to destroy the theme %{resource} because a site has it associated.
+        invalid_date: The date is not within the range 6 months.
+    error:
+  notifications_fem:
+    info:
+    success:
+      resource:
+        created: The %{resource} was created correctly.
+        updated: The %{resource} was updated correctly.
+        destroyed: The %{resource} was destroyed correctly.
+        set_as_draft: The %{resource} was reverted to draft.
+    alert:
+      resource:
+        dependencies: It's not possible to destroy the %{resource} because of its dependencies.
+        institution_dependency: It's not possible to destroy because the institution %{resource} has users.
+        category_dependency: It's not possible to destroy the category %{resource} because it has pages associated.
+        cannot_publish: The %{resource} has not been published because the permalink is already in use.
+    error:
+  pundit:
+    default: You cannot perform this action.
+  delete_per_lot:
+    advice: Are you sure you want to delete the selected elements?
+    resources_not_selected: There isn't any selected elements.
+    resource_messages:
+      zero: Deleted elements correctly.
+      one: An element couldn't be deleted.
+      other: Couldn't delete %{count} elements.
+    success: Deleted elements correctly.
+    disable_success: Disabled elements due to dependencies.
+    disable_messages:
+      one: An element has been disabled due to dependencies.
+      other: "%{count} elements were disabled due to dependencies."
+    dependencies_messages:
+      one: An element couldn't be deleted due to dependencies.
+      other: "%{count} elements couldn't be deleted due to dependencies."

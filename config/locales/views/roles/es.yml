@@ -1,0 +1,19 @@
+es:
+  roles:
+    index:
+      title: Roles
+      resource: el rol
+      name: Nombre
+      description: Descripción
+      key: Llave
+      scope: Alcance
+      one: Rol
+      other: Roles
+      permissions: Permisos
+    form:
+      title: Rol
+      role_key: Clave de rol
+      resource: rol
+      back: Ir a roles
+  breadcrumbs:
+    roles: Roles

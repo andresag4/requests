@@ -1,0 +1,156 @@
+es:
+  users:
+    registrations:
+      index:
+        title: Usuarios
+        resource: el usuario
+        username: Usuario
+        name: Nombre
+        role: Rol
+        last_login: Último Acceso
+        active: Activo
+        one: Usuario
+        other: Usuarios
+      new:
+        title: Nuevo Usuario
+        name: Nombre
+        last_name: Apellido paterno
+        mother_maiden_name: Apellido materno
+        area: Área o departmento
+        employment: Puesto
+        enrollment: Número de empleado o matrícula
+        phone_numbers: Teléfonos
+        add_phone: Añadir número de teléfono y extensión
+        resource: usuario
+        back: Ir a usuarios
+        typeahead: Ingrese el nombre de la institución
+      show:
+        email: Correo electrónico
+        full_name: Nombre completo
+        site: Sitio
+        institution: Institución
+        department: Departamento
+        job: Puesto
+        employee_number: Número de empleado
+        note: Nota
+      edit_user:
+        title: Editar Usuario
+        name: Nombre
+        last_name: Apellido paterno
+        mother_maiden_name: Apellido materno
+        area: Área o departmento
+        employment: Puesto
+        enrollment: Número de empleado o matrícula
+        phone_numbers: Teléfonos
+        add_phone: Añadir número de teléfono y extensión
+        resource: usuario
+        back: Ir a usuarios
+        cropping_title: Seleccionar área para recortar
+        cropping_modal: Realizar recortado de imagen de perfil
+        file_selector: Seleccionar imagen de perfil
+        typeahead: Type the name of the institution
+      edit:
+        title: Mi Perfil
+        name: Nombre
+        last_name: Apellido paterno
+        mother_maiden_name: Apellido materno
+        area: Área o departmento
+        employment: Puesto
+        enrollment: Número de empleado o matrícula
+        phone_numbers: Teléfonos
+        add_phone: Añadir número de teléfono y extensión
+        resource: usuario
+        back: Regresar
+        typeahead: Type the name of the institution
+      phone_fields:
+        phone_number: Teléfono
+        extension: Extensión
+        destroy: Eliminar teléfono y extensión
+      change_user_password:
+        title: Cambiar Contraseña de Usuario
+        new: Nueva contraseña
+        confirm: Confirmar nueva contraseña
+        resource: usuario
+        back: Ir a usuarios
+      change_password:
+        title: Cambiar Mi Contraseña
+        current: Contraseña actual
+        new: Nueva contraseña
+        confirm: Confirmar nueva contraseña
+        resource: usuario
+        back: Regresar
+      new_qr_code:
+        new_qr: ¿No cuentas con un código QR?
+        user_email: Correo de usuario
+      qr_code_modal:
+        modal_title: Código QR
+        generate_qr: Generar código QR
+        generate_qr_message: ¿Desea generar un nuevo código QR?
+    confirmations:
+      new:
+        confirmation: ¿No recibiste el correo de confirmación?
+        email: Correo de usuario
+    recycle_bin:
+      title: Usuarios en papelera de reciclaje
+    mailer:
+      confirmation_instructions:
+        welcome: ¡Bienvenido %{name}!
+        message: Puedes confirmar el email de tu cuenta dando click en el enlace de abajo.
+        confirm: Confirmar mi cuenta
+        first_step_title: Paso 1
+        first_step_sub_title: Obtener la aplicación
+        first_step_message: 'Descarga e instala la aplicación de autenticación para tu teléfono o tableta:'
+        second_step_title: Paso 2
+        second_step_sub_title: Escanea este código de barras
+        second_step_message_one: 'Abre la aplicación de autenticación y:'
+        second_step_message_second: Toca el icono "+" en la parte superior derecha de la aplicación.
+        second_step_message_third: Escanea la imagen a la izquierda, usando la cámara del teléfono.
+        third_step_title: Paso 3
+        third_step_sub_title: Confirmar la cuenta
+        third_step_message: Confirma el email de tu cuenta dando click en el enlace de abajo. Una vez confirmado, podrás ingresar al sistema con tu email, contraseña y tu contraseña de uso único generado por la aplicación de autenticación.
+      reset_password_instructions:
+        hello: ¡Hola %{name}!
+        instructions: Alguien ha solicitado un enlace para cambiar tu contraseña. Puedes hacerlo dando click en el botón de abajo.
+        change_password: Cambiar contraseña
+        ignore: Si tú no has realizado esta solicitud, por favor ignora este correo.
+        message: Tu contraseña no cambiará hasta que accedas al botón de arriba y especifiques una nueva.
+      unlock_instructions:
+        hello: ¡Hola %{name}!
+        message: Tu cuenta ha sido bloqueada debido a un número excesivo de intentos de inicio de sesión.
+        instructions: Para desbloquear tu cuenta haz click en el botón de abajo.
+        unlock: Desbloquear
+    password_expired:
+      show:
+        title: Renovar Contraseña
+        current_password: Contraseña actual
+        new_password: Nueva contraseña
+        password_confirm: Confirmar nueva contraseña
+    passwords:
+      new:
+        forgotten_password: ¿Olvidaste tu contraseña?
+        user_email: Correo de usuario
+      edit:
+        title: Cambiar contraseña
+        new_password: Nueva contraseña
+        minimum_char: '(%{char} Caracteres mínimo)'
+        password_confirm: Confirmar nueva contraseña
+    sessions:
+      new:
+        log_in: Iniciar sesión
+        user_email: Correo de usuario
+        password: Contraseña
+        login: Entrar
+        forgotten_password: ¿Olvidaste tu contraseña?
+        forgotten_message: No te preocupes, haz click %{link} para restablecer tu contraseña.
+        confirm_mail: ¿No recibiste el correo de confirmación?
+        confirm_message: Haz click %{link} para reenviar el correo e ingresar al sistema.
+        blocked_account: ¿Tu cuenta se encuentra bloqueada?
+        blocked_message: Para desbloquearla haz click %{link}.
+    unlocks:
+      new:
+        blocked_account: ¿Tu cuenta se encuentra bloqueada?
+        user_email: Correo de usuario
+  breadcrumbs:
+    users: Usuarios
+    change_password: Cambiar contraseña
+    change_user_password: Cambiar contraseña %{username}

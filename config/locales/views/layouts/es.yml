@@ -1,0 +1,14 @@
+es:
+  layouts:
+    javascript_check:
+      title: ¡JavaScript no esta activado!
+      message: Para una mejor experiencia de usuario es necesario que habilites la ejecución de JavaScript en la
+        configuración de tu navegador. Una vez habilitado simplemente haz clic en el botón Recargar.
+      btn: Recargar
+    browser_check:
+      title: ¿Aún utilizas %{name} en la versión %{version}?
+      message_html: La versión de tu explorador no es la mas adecuada para utilizarse con ContentMS. <br>
+        Te recomendamos que actualices tu explorador o intentes con otro. <br>
+        Estos son algunas opciones que te sugerimos.
+    application:
+      copyright: Todos los derechos reservados.
