@@ -1,6 +1,8 @@
-<h1>Editing Permission</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @permission %> |
-<%= link_to 'Back', permissions_path %>
+<div class="col-md-8 col-md-offset-2">
+  <section class="content-header">
+    <h1>Editar permiso</h1>
+  </section>
+  <section class="content">
+    <%= render 'form', permission: @permission, controllers: @controllers, actions: @actions %>
+  </section>
+</div>

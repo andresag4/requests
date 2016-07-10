@@ -1,31 +1,56 @@
-<%= form_for(@permission) do |f| %>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Permiso</h3>
+    <div class="box-tools">
     </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_field :description %>
-    </div>
-    <div class="field">
-      <%= f.label :controller %><br>
-      <%= f.select :controller, @controllers.sort.collect { |c| [c.underscore.titleize, c] },
-                   {include_blank: t('helpers.select.prompt')}, data: {url: get_controller_actions_url} %>
-    </div>
-    <div class="field">
-      <%= f.label :action %><br>
-      <%= f.select :action, @actions.sort.collect { |a| [a.titleize, a] },
-                   {include_blank: t('helpers.select.prompt')} %>
-    </div>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <%= form_for(permission, html: {class: 'form-horizontal'}, validate: true) do |f| %>
+      <div class="box-body">
+        <div class="form-group">
+          <%= f.label :name, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.text_field :name, class: 'form-control', autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :description, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.text_field :description, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :controller, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.select :controller, controllers.sort.collect { |c| [c.underscore.titleize, c] },
+                         {include_blank: t('helpers.select.prompt')}, class: 'form-control', data: {url: get_controller_actions_url} %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :action, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.select :action, actions.sort.collect { |a| [a.titleize, a] },
+                         {include_blank: t('helpers.select.prompt')}, class: 'form-control' %>
+          </div>
+        </div>
 
-    <div class="field">
-      <%= collection_check_boxes(:permission, :role_ids, Role.all.order(:name), :id, :name) do |b| %>
-          <%= b.label { b.check_box(class: 'icheck-me', data: {skin: 'square', color: 'red'}) } %><br>
-          <%= b.text %>
-      <% end %>
-    </div>
+        <!-- TODO: MODIFICAR ESTILO -->
+        <div class="field">
+          <%= collection_check_boxes(:permission, :role_ids, Role.all.order(:name), :id, :name) do |b| %>
+              <%= b.label { b.check_box(class: 'icheck-me', data: {skin: 'square', color: 'red'}) } %><br>
+              <%= b.text %>
+          <% end %>
+        </div>
 
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <div class="col-sm-offset-2">
+          <%= f.button 'Crear', class: 'btn btn-primary' %>
+          <%= link_to 'Cancelar', permissions_path, class: 'btn btn-danger' %>
+        </div>
+      </div>
+  <% end %>
+</div>

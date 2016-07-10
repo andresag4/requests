@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Folio:</strong>
+  <%= @request.folio %>
+</p>
+
+<p>
+  <strong>Reception date:</strong>
+  <%= @request.reception_date %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @request.data_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @request.user %>
+</p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @request.entry %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

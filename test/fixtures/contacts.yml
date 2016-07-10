@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_id: 
+  state_id: 
+  city_id: 
+  colony_id: 
+  postcode: MyString
+  street: MyString
+  internal_number: MyString
+  external_number: MyString
+
+two:
+  request_id: 
+  state_id: 
+  city_id: 
+  colony_id: 
+  postcode: MyString
+  street: MyString
+  internal_number: MyString
+  external_number: MyString

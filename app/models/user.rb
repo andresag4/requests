@@ -38,6 +38,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :current_password
 
+  has_many :requests
+
   belongs_to :role
   delegate :name, :scope, :key, to: :role, prefix: true
 
