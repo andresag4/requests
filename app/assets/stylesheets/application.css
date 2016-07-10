@@ -10,6 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jQuery-ui/jquery-ui.theme
+ *= require jQuery-ui/jquery-ui.structure
+ *= require jQuery-ui/jquery-ui.css
+ *= require select2/select2
+ *= require font-awesome
+ *= require _bootstrap-sprockets
+ *= require _bootstrap
+ *= require bootstrap-slider/slider
+ *= require pace/white/pace-theme-flash
+ *= require toastr/toastr.min
+ *= require AdminLTE
+ *= require _all-skins
+ *= require general
  *= require_tree .
  *= require_self
  */
