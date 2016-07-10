@@ -1,0 +1,31 @@
+<%= form_for(@permission) do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :controller %><br>
+      <%= f.select :controller, @controllers.sort.collect { |c| [c.underscore.titleize, c] },
+                   {include_blank: t('helpers.select.prompt')}, data: {url: get_controller_actions_url} %>
+    </div>
+    <div class="field">
+      <%= f.label :action %><br>
+      <%= f.select :action, @actions.sort.collect { |a| [a.titleize, a] },
+                   {include_blank: t('helpers.select.prompt')} %>
+    </div>
+
+    <div class="field">
+      <%= collection_check_boxes(:permission, :role_ids, Role.all.order(:name), :id, :name) do |b| %>
+          <%= b.label { b.check_box(class: 'icheck-me', data: {skin: 'square', color: 'red'}) } %><br>
+          <%= b.text %>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,53 @@
+es:
+  notifications_masc:
+    info:
+      permissions_assigned: Los permisos fueron totalmente asignados.
+    success:
+      resource:
+        created: El %{resource} fue creado correctamente.
+        updated: El %{resource} fue actualizado correctamente.
+        destroyed: El %{resource} fue destruido correctamente.
+        logical_delete: El %{resource} fue desactivado.
+        restored: El %{resource} fue restaurado correctamente.
+      file:
+        destroyed: El archivo fue destruido correctamente.
+    alert:
+      resource:
+        dependencies: No es posible eliminar el %{resource} ya que tiene dependencias.
+        destroyed: El %{resource} no pudo ser destruido.
+        topic_dependency: No es posible eliminar el tópico %{resource} ya que existen páginas asociadas a el.
+        role_dependency: No es posible eliminar el rol %{resource} ya que existen usuarios asociados con el.
+        theme_dependency: No es posible eliminar el tema %{resource} ya que esta asociado a un sitio.
+        invalid_date: La fecha no está dentro del rango de 6 meses.
+    error:
+  notifications_fem:
+    info:
+    success:
+      resource:
+        created: La %{resource} fue creada correctamente.
+        updated: La %{resource} fue actualizada correctamente.
+        destroyed: La %{resource} fue destruída correctamente.
+        set_as_draft: La %{resource} fue revertida a borrador.
+    alert:
+      resource:
+        dependencies: No es posible eliminar la %{resource} ya que tiene dependencias.
+        institution_dependency: No es posible eliminar la intitución %{resource} ya que tiene usuarios asignados a ella.
+        category_dependency: No es posible eliminar la categoría %{resource} ya que existen páginas asociadas a ella.
+        cannot_publish: La %{resource} no fue publicada ya que el permalink ya esta siendo usado.
+    error:
+  pundit:
+    default: No puedes realizar esta acción.
+  delete_per_lot:
+    advice: ¿Estás seguro que deseas eliminar los elementos seleccionados?
+    resources_not_selected: No está seleccionado ningún elemento.
+    resource_messages:
+      zero: Elementos eliminados correctamente.
+      one: Un elemento no se pudo eliminar.
+      other: No se pudieron eliminar %{count} elementos.
+    success: Elementos eliminados correctamente.
+    disable_messages:
+      one: Un elemento fue deshabilitado debido a dependencias.
+      other: "%{count} elementos fueron deshabilitados debido a dependencias."
+    dependencies_messages:
+      one: Un elemento no pudo ser eliminado debido a dependencias.
+      other: "%{count} elementos no pudieron ser eliminados debido a dependencias."

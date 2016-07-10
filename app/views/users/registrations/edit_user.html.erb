@@ -1,0 +1,29 @@
+<h2>Edit User</h2>
+
+<%= form_for(@user, url: update_user_registration_path(@user), role: 'form',
+             html: {class: 'form-horizontal'}) do |f| %>
+
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :mother_last_name %><br/>
+      <%= f.text_field :mother_last_name %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update User" %>
+    </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Permissions</h1>
+
+<%= link_to t 'helpers.generate_seeds', class: 'generate-seed' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+      <th>Controller</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @permissions.each do |permission| %>
+      <tr>
+        <td><%= permission.name %></td>
+        <td><%= permission.action %></td>
+        <td><%= permission.controller %></td>
+        <td><%= link_to 'Show', permission %></td>
+        <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
+        <td><%= link_to 'Destroy', permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Permission', new_permission_path %>

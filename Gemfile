@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.3.0'
-#ruby-gemset=cms-gemset
+#ruby-gemset=government-gemset
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -112,6 +112,9 @@ gem 'bootstrap-daterangepicker-rails', '~> 0.1.2'
 
 # Gem browser validation
 gem 'browser', '~> 2.0.2'
+
+# Pg is the Ruby interface to the PostgreSQL RDBMS.
+gem 'pg', '~> 0.18.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

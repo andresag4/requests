@@ -1,0 +1,48 @@
+<h2>Sign up</h2>
+
+<%= form_for(@user, url: create_user_registration_path(@user), role: 'form',
+             html: {class: 'form-horizontal'}) do |f| %>
+
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br/>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br/>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :mother_last_name %><br/>
+      <%= f.text_field :mother_last_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :role_id %>
+      <%= f.collection_select(:role_id, collection_scope(current_user, Role), :id, :name,
+                              {prompt: t('helpers.select.prompt')}, {class: 'form-control'}) %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+<% end %>
