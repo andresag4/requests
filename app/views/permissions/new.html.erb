@@ -1,5 +1,9 @@
-<h1>New Permission</h1>
+<div class="col-md-8 col-md-offset-2">
+  <section class="content-header">
+    <h1>Nuevo permiso</h1>
+  </section>
+  <section class="content">
+    <%= render 'form', permission: @permission, controllers: @controllers, actions: @actions %>
+  </section>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', permissions_path %>

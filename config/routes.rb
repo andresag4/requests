@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :requests
+  resources :categories
+  resources :genders
+  resources :titles
+  resources :colonies
+  resources :cities
+  resources :states
+  resources :entries
   resources :permissions
   resources :roles
   devise_for :users,

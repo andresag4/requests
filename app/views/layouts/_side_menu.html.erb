@@ -5,6 +5,21 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">Main Navigation</li>
+      <% if has_policy(Request, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Solicitudes</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Solicitud'.html_safe, new_request_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Solicitudes'.html_safe, requests_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
       <li class="treeview">
         <a href="javascript:;">
           <i class="fa fa-lightbulb-o"></i> <span>Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
@@ -57,46 +72,158 @@
           </li>
         </ul>
       </li>
+      <li class="header">Administración</li>
+      <% if has_policy(Category, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Categorías</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Categoría'.html_safe, new_category_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Categorías'.html_safe, categories_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
+      <% if has_policy(Entry, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Entradas</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Entrada'.html_safe, new_entry_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Entradas'.html_safe, entries_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
+      <% if has_policy(State, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Estados</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Estado'.html_safe, new_state_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Estados'.html_safe, states_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
+      <% if has_policy(City, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Ciudades</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Ciudad'.html_safe, new_city_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Ciudades'.html_safe, cities_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
+      <% if has_policy(Colony, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Colonias</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Colonia'.html_safe, new_colony_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Colonias'.html_safe, colonies_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
+      <% if has_policy(Title, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Títulos</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Título'.html_safe, new_title_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Títulos'.html_safe, titles_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
+      <% if has_policy(Gender, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Géneros</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Género'.html_safe, new_gender_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Géneros'.html_safe, genders_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
       <li class="header">Acceso</li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-ban"></i> <span>Permisos</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Permiso'.html_safe, new_permission_path %>
+      <% if has_policy(Permission, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Permisos</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Permiso'.html_safe, new_permission_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Permisos'.html_safe, permissions_path %>
+              </li>
+            </ul>
           </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Permisos'.html_safe, permissions_path %>
+      <% end %>
+      <% if has_policy(Role, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-lock"></i> <span>Roles</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Rol'.html_safe, new_role_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Roles'.html_safe, roles_path %>
+              </li>
+            </ul>
           </li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-lock"></i> <span>Roles</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Rol'.html_safe, new_role_path %>
+      <% end %>
+      <% if has_policy(User, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-users"></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Usuario'.html_safe, new_user_registration_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Usuarios'.html_safe, user_registrations_path %>
+              </li>
+            </ul>
           </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Roles'.html_safe, roles_path %>
-          </li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-users"></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Usuario'.html_safe, new_user_registration_path %>
-          </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Usuarios'.html_safe, user_registrations_path %>
-          </li>
-        </ul>
-      </li>
+      <% end %>
     </ul>
   </section>
   <!-- /.sidebar -->

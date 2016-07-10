@@ -21,6 +21,7 @@
 //= require fastclick/fastclick
 //= require toastr/toastr.min
 //= require app
+//= require rails.validations
 //= require general
 //= require pace/pace
 //= require turbolinks

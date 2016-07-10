@@ -1,0 +1,50 @@
+<section class="content-header">
+  <h1>Listado de Ciudades</h1>
+</section>
+<section class="content">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">
+        <%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_city_path, class: 'btn btn-flat bg-green' %>
+      </h3>
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @cities.each do |city| %>
+            <tr>
+              <td><%= city.name %></td>
+              <td><%= city.state.name %></td>
+              <td class="actions">
+                <div>
+                  <%= link_to '<i class="fa fa-search"></i>'.html_safe, city, class: 'btn btn-flat btn-xs bg-green' %>
+                  <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_city_path(city), class: 'btn btn-flat btn-xs bg-blue' %>
+                  <%= link_to '<i class="fa fa-trash"></i>'.html_safe, city, method: :delete,
+                              data: {confirm: 'Are you sure?'}, class: 'btn btn-flat btn-xs bg-red' %>
+                </div>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <%= custom_paginator @cities, 'no-margin pull-right' %>
+    </div>
+  </div>
+</section>
