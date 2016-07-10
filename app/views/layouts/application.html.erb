@@ -8,16 +8,16 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta content='<%= user_signed_in? ? current_user.id : '' %>' name='user-id'/>
   <%= favicon_link_tag(source='food-logo.png') %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   <%= csrf_meta_tags %>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<%#= render 'layouts/notifications' %>
+<%= render 'layouts/notifications' %>
 <div class="wrapper">
-  <%#= render 'layouts/top_menu' %>
+  <%= render 'layouts/top_menu' %>
   <!-- Left side column. contains the logo and sidebar -->
-  <%#= render 'layouts/side_menu' %>
+  <%= render 'layouts/side_menu' %>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <%= yield %>
@@ -26,7 +26,7 @@
     <strong>Copyright &copy; 2016.</strong> All rights
     reserved.
   </footer>
-  <%#= render 'layouts/control_sidebar' %>
+  <%= render 'layouts/control_sidebar' %>
   <div class="control-sidebar-bg"></div>
 </div><!-- ./wrapper -->
 </body>

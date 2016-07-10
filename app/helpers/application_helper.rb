@@ -22,4 +22,10 @@ module ApplicationHelper
     policy_name = (scope.to_s + 'Policy').classify.constantize
     policy_name::ScopeActions.new(user, scope).collection_scope
   end
+
+  def custom_paginator(resource, resource_class = '')
+    will_paginate resource, class: "pagination pagination-sm #{resource_class}",
+                  next_label: '<i class="fa fa-chevron-right"></i>'.html_safe,
+                  previous_label: '<i class="fa fa-chevron-left"></i>'.html_safe
+  end
 end
