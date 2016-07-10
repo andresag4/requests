@@ -1,5 +1,5 @@
 # Gets all the actions from selected controller.
-$(window).bind 'page:change', ->
+$(document).on 'turbolinks:load', ->
   $('#permission_controller').on 'change', ->
     resource = $('#permission_controller').val()
     url = $('#permission_controller').data('url')
@@ -26,7 +26,7 @@ $(window).bind 'page:change', ->
           location.reload()
         return
       error: ->
-       return
+        return
     return
 
   # Displays a success message after the seeds were generated and refresh
