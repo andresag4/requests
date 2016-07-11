@@ -12,7 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" id="current-controller" data-controller="<%= params[:controller] %>">
 <%= render 'layouts/notifications' %>
 <div class="wrapper">
   <%= render 'layouts/top_menu' %>
@@ -26,7 +26,6 @@
     <strong>Copyright &copy; 2016.</strong> All rights
     reserved.
   </footer>
-  <%= render 'layouts/control_sidebar' %>
   <div class="control-sidebar-bg"></div>
 </div><!-- ./wrapper -->
 </body>

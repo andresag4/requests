@@ -1,0 +1,28 @@
+@import "variables";
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right),
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+  width: 250px;
+}
+
+//Side menu active section.
+li.active-menu {
+  a {
+    color: $principal-yellow !important;
+  }
+  .icon-container {
+    margin-left: -10px;
+    .active-icon {
+      border-radius: 50% !important;
+      background-color: $principal-yellow !important;
+    }
+  }
+  .fa-stack-1x {
+    color: #111;
+  }
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span {
+  margin-left: 0 !important;
+
+}

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700italic,900italic,900,500,300,100);
 /*!
  *   AdminLTE v2.3.0
  *   Author: Almsaeed Studio
@@ -21,8 +22,8 @@ body {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: 'Roboto', 'Source Sans Pro ', Helvetica, Arial, sans-serif;
+  font-weight: 300;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -96,7 +97,7 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-  background-color: #ecf0f5;
+  background-color: #dedede;
   z-index: 800;
 }
 .main-footer {
@@ -163,7 +164,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 /* General Links */
 a {
@@ -295,9 +297,9 @@ a:focus {
   line-height: 50px;
   text-align: center;
   width: 230px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   padding: 0 15px;
-  font-weight: 300;
+  font-weight: 200;
   overflow: hidden;
 }
 .main-header .logo .logo-lg {
@@ -1517,13 +1519,11 @@ a:focus {
  * --------------
  */
 .box {
-  position: relative;
-  border-radius: 3px;
-  background: #ffffff;
-  border-top: 3px solid #d2d6de;
-  margin-bottom: 20px;
-  width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 3px;
 }
 .box.box-primary {
   border-top-color: #3c8dbc;
@@ -1713,9 +1713,6 @@ a:focus {
   padding: 10px;
   position: relative;
 }
-.box-header.with-border {
-  border-bottom: 1px solid #f4f4f4;
-}
 .collapsed-box .box-header.with-border {
   border-bottom: none;
 }
@@ -1801,6 +1798,7 @@ a:focus {
   border-top: 1px solid #f4f4f4;
   padding: 10px;
   background-color: #ffffff;
+  margin: 0px -20px -15px 5px;
 }
 .chart-legend {
   margin: 10px 0;

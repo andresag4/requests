@@ -1,25 +1,15 @@
-<aside class="main-sidebar">
+<aside class="main-sidebar" id="#menu-active" data-controller="menu-<%= params[:controller] %>">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">Main Navigation</li>
-      <% if has_policy(Request, %w(new index)) %>
-          <li class="treeview">
-            <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Solicitudes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li>
-                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Solicitud'.html_safe, new_request_path %>
-              </li>
-              <li>
-                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Solicitudes'.html_safe, requests_path %>
-              </li>
-            </ul>
-          </li>
-      <% end %>
+      <li class="header">Navegación Principal</li>
+      <li class="treeview" id="home">
+        <a href="/">
+          <i class="fa fa-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+      </li>
       <li class="treeview">
         <a href="javascript:;">
           <i class="fa fa-lightbulb-o"></i> <span>Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
@@ -72,18 +62,42 @@
           </li>
         </ul>
       </li>
+      <% if has_policy(Request, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-ban"></i> <span>Solicitudes</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Solicitud'.html_safe, new_request_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Solicitudes'.html_safe, requests_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
       <li class="header">Administración</li>
       <% if has_policy(Category, %w(new index)) %>
           <li class="treeview">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Categorías</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-tags"></i> <span>Categorías</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
                 <%= link_item '<i class="fa fa-circle-o"></i> Nueva Categoría'.html_safe, new_category_path %>
               </li>
               <li>
-                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Categorías'.html_safe, categories_path %>
+                <%= link_item '<i class="fa fa-circle-o"></i> Proyectos'.html_safe, categories_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Quejas y Denuncias'.html_safe, categories_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Audiencias'.html_safe, categories_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Curriculums'.html_safe, categories_path %>
               </li>
             </ul>
           </li>
@@ -91,7 +105,7 @@
       <% if has_policy(Entry, %w(new index)) %>
           <li class="treeview">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Entradas</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-share"></i> <span>Entradas</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
@@ -106,7 +120,7 @@
       <% if has_policy(State, %w(new index)) %>
           <li class="treeview">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Estados</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-map-marker"></i> <span>Estados</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
@@ -119,9 +133,9 @@
           </li>
       <% end %>
       <% if has_policy(City, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-cities">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Ciudades</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-location-arrow"></i> <span>Ciudades</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
@@ -134,9 +148,9 @@
           </li>
       <% end %>
       <% if has_policy(Colony, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-colonies">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Colonias</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-map-pin"></i> <span>Colonias</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
@@ -149,9 +163,9 @@
           </li>
       <% end %>
       <% if has_policy(Title, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-titles">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Títulos</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-hand-paper-o"></i> <span>Títulos</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
@@ -164,9 +178,9 @@
           </li>
       <% end %>
       <% if has_policy(Gender, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-genders">
             <a href="javascript:;">
-              <i class="fa fa-ban"></i> <span>Géneros</span> <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-venus-mars"></i> <span>Géneros</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
               <li>
@@ -180,7 +194,7 @@
       <% end %>
       <li class="header">Acceso</li>
       <% if has_policy(Permission, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-permissions">
             <a href="javascript:;">
               <i class="fa fa-ban"></i> <span>Permisos</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
@@ -195,7 +209,7 @@
           </li>
       <% end %>
       <% if has_policy(Role, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-roles">
             <a href="javascript:;">
               <i class="fa fa-lock"></i> <span>Roles</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
@@ -210,7 +224,7 @@
           </li>
       <% end %>
       <% if has_policy(User, %w(new index)) %>
-          <li class="treeview">
+          <li class="treeview menu-users">
             <a href="javascript:;">
               <i class="fa fa-users"></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i>
             </a>

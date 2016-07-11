@@ -20,6 +20,7 @@
 //= require bootstrap-slider/bootstrap-slider
 //= require fastclick/fastclick
 //= require toastr/toastr.min
+//= require icheck
 //= require app
 //= require rails.validations
 //= require general
