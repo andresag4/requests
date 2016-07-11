@@ -1,5 +1,5 @@
 # Gets all the actions from selected controller.
-$(document).on 'turbolinks:load', ->
+$(window).bind 'page:change', ->
   $('#permission_controller').on 'change', ->
     resource = $('#permission_controller').val()
     url = $('#permission_controller').data('url')

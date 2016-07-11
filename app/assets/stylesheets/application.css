@@ -17,12 +17,14 @@
  *= require font-awesome
  *= require _bootstrap-sprockets
  *= require _bootstrap
+ *= require icheck/square/_all
  *= require bootstrap-slider/slider
- *= require pace/white/pace-theme-flash
+ *= require pace/yellow/pace-theme-flash
  *= require toastr/toastr.min
  *= require AdminLTE
  *= require _all-skins
  *= require general
+ *= require custom
  *= require_tree .
  *= require_self
  */
