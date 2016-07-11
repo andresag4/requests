@@ -13,5 +13,5 @@ class Resume < ActiveRecord::Base
   belongs_to :reques
   belongs_to :category
 
-  validates_presence_of :request_id, :category_id
+  validates_presence_of :category_id
 end

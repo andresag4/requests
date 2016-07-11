@@ -22,6 +22,4 @@ class Contact < ActiveRecord::Base
   belongs_to :state
   belongs_to :city
   belongs_to :colony
-
-  validates_presence_of :request_id
 end

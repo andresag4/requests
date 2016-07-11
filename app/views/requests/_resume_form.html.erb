@@ -1,0 +1,19 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Curriculum</h3>
+    <div class="box-tools">
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <div class="box-body">
+    <div class="form-group">
+      <%= f.label :category_id, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= collection_select(:category_id, :id, Category.resume, :id, :name, {prompt: t('helpers.select.prompt')},
+                              {class: 'form-control col-md-12'}) %>
+      </div>
+    </div>
+    <!-- TODO: JSON FORM -->
+  </div>
+</div>

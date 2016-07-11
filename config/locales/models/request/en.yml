@@ -1,0 +1,9 @@
+es:
+  activerecord:
+    attributes:
+      role:
+        folio: Folio
+        reception_date: Reception Date
+        data_type: Request type
+        user_id: Capturist
+        entry_id: Entry

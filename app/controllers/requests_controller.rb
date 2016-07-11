@@ -17,6 +17,42 @@ class RequestsController < ApplicationController
     @request = Request.new
   end
 
+  def new_project
+    @request = Request.new(data_type: :project)
+    @request.build_contact
+    @request.build_project
+    @request.build_general_information
+
+    render 'new'
+  end
+
+  def new_complaint
+    @request = Request.new(data_type: :complaint)
+    @request.build_contact
+    @request.build_complaint
+    @request.build_general_information
+
+    render 'new'
+  end
+
+  def new_audience
+    @request = Request.new(data_type: :audience)
+    @request.build_contact
+    @request.build_audience
+    @request.build_general_information
+
+    render 'new'
+  end
+
+  def new_resume
+    @request = Request.new(data_type: :resume)
+    @request.build_contact
+    @request.build_resume
+    @request.build_general_information
+
+    render 'new'
+  end
+
   # GET /requests/1/edit
   def edit
   end
@@ -62,13 +98,19 @@ class RequestsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_request
-      @request = Request.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_request
+    @request = Request.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def request_params
-      params.require(:request).permit(:folio, :reception_date, :data_type, :user_id, :entry_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def request_params
+    params.require(:request).permit(:folio, :reception_date, :data_type, :user_id, :entry_id,
+                                    project_attributes: [:id, :category_id, :name, :description],
+                                    general_information_attributes: [:id, :request_id, :title_id, :name, :father_last_name,
+                                                                     :mother_last_name, :birthdate, :gender_id, :email,
+                                                                     :position, :organization, :ip, :anonymous],
+                                    contact_attributes: [:id, :request_id, :state_id, :city_id, :colony_id, :postcode,
+                                                         :street, :internal_number, :external_number])
+  end
 end
