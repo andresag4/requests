@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :requests
   resources :categories
   resources :genders
   resources :titles
@@ -61,6 +60,14 @@ Rails.application.routes.draw do
 
       # Allows to delete a user.
       delete '/users/:id', to: 'users/registrations#destroy', as: :destroy_user_registration
+
+      # Routes for the different types of requests
+      get '/requests/new/project', to: 'requests#new_project', as: :new_project
+      get '/requests/new/complaint', to: 'requests#new_complaint', as: :new_complaint
+      get '/requests/new/audience', to: 'requests#new_audience', as: :new_audience
+      get '/requests/new/resume', to: 'requests#new_resume', as: :new_resume
+
+      resources :requests
     end
 
     # Allows the execution of the back button in the login options.

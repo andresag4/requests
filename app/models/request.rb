@@ -27,7 +27,11 @@ class Request < ActiveRecord::Base
 
   enum data_type: [:project, :complaint, :audience, :resume]
 
-  validates_presence_of :folio, :reception_date, :data_type, :entry_id
+  #validates_presence_of :folio, :reception_date, :data_type, :entry_id
+
+  accepts_nested_attributes_for :project
+  accepts_nested_attributes_for :contact
+  accepts_nested_attributes_for :general_information
 
   def self.i18n_data_type(hash = {})
     data_types.keys.each { |key| hash[I18n.t("data_type.#{key}")] = key }

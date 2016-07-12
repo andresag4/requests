@@ -1,0 +1,8 @@
+en:
+  requests:
+    form:
+      folio: Folio
+      reception_date: Reception Date
+      data_type: Request Type
+      user_id: Capturist
+      entry_id: Entry

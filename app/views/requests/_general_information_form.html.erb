@@ -1,0 +1,67 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Información General</h3>
+    <div class="box-tools">
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <div class="box-body">
+    <div class="form-group">
+      <%= f.label :title_id, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= collection_select(:title_id, :id, Colony.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                              {class: 'form-control col-md-12'}) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :father_last_name, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :father_last_name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :mother_last_name, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :mother_last_name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :birthdate, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :birthdate, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :gender_id, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= collection_select(:gender_id, :id, Gender.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                              {class: 'form-control col-md-12'}) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :position, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :position, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :organization, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :organization, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>

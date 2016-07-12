@@ -15,5 +15,5 @@ class Complaint < ActiveRecord::Base
   belongs_to :request
   belongs_to :category
 
-  validates_presence_of :subject, :request_id, :category_id
+  validates_presence_of :subject, :category_id
 end

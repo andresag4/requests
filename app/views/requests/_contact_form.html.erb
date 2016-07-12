@@ -1,0 +1,56 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Contacto</h3>
+    <div class="box-tools">
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <div class="box-body">
+    <div class="form-group">
+      <%= f.label :state_id, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= collection_select(:state_id, :id, State.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                              {class: 'form-control col-md-12'}) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :city_id, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= collection_select(:city_id, :id, City.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                              {class: 'form-control col-md-12'}) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :colony_id, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= collection_select(:city_id, :id, Colony.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                              {class: 'form-control col-md-12'}) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :postcode, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :postcode, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :street, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :street, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :internal_number, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :internal_number, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :external_number, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :external_number, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
