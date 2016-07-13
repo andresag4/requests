@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20160714150426) do
 
   add_index "abilities", ["resume_id"], name: "index_abilities_on_resume_id", using: :btree
 
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "audiences", force: :cascade do |t|
     t.integer  "request_id"
     t.integer  "category_id"
@@ -197,8 +203,11 @@ ActiveRecord::Schema.define(version: 20160714150426) do
     t.integer  "entry_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "area_id"
+    t.integer  "responsible_id"
   end
 
+  add_index "requests", ["area_id"], name: "index_requests_on_area_id", using: :btree
   add_index "requests", ["entry_id"], name: "index_requests_on_entry_id", using: :btree
   add_index "requests", ["user_id"], name: "index_requests_on_user_id", using: :btree
 
@@ -268,8 +277,10 @@ ActiveRecord::Schema.define(version: 20160714150426) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.integer  "role_id"
+    t.integer  "area_id"
   end
 
+  add_index "users", ["area_id"], name: "index_users_on_area_id", using: :btree
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -297,10 +308,12 @@ ActiveRecord::Schema.define(version: 20160714150426) do
   add_foreign_key "projects", "categories"
   add_foreign_key "projects", "requests"
   add_foreign_key "request_files", "requests"
+  add_foreign_key "requests", "areas"
   add_foreign_key "requests", "entries"
   add_foreign_key "requests", "users"
   add_foreign_key "resumes", "categories"
   add_foreign_key "resumes", "requests"
   add_foreign_key "studies", "resumes"
+  add_foreign_key "users", "areas"
   add_foreign_key "users", "roles"
 end

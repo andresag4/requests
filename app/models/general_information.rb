@@ -23,4 +23,15 @@ class GeneralInformation < ActiveRecord::Base
   belongs_to :request
   belongs_to :title
   belongs_to :gender
+
+  validates_presence_of :name, :father_last_name, :mother_last_name, if: :anonymous?
+
+
+  def validate_one_contact_form
+
+  end
+
+  def anonymous?
+    self.anonymous
+  end
 end

@@ -14,4 +14,6 @@ class ContactPhone < ActiveRecord::Base
   belongs_to :contact
 
   validates_presence_of :contact_id, :tag, :number
+
+  ## HAcer polimorfica la tabla
 end

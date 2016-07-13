@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  resources :categories
-  resources :genders
-  resources :titles
-  resources :colonies
-  resources :cities
-  resources :states
-  resources :entries
+  resources :categories, except: [:show]
+  resources :genders, except: [:show]
+  resources :titles, except: [:show]
+  resources :colonies, except: [:show]
+  resources :cities, except: [:show]
+  resources :states, except: [:show]
+  resources :entries, except: [:show]
   resources :permissions
+  resources :areas, except: [:show]
   resources :roles
   devise_for :users,
              controllers: {sessions: 'users/sessions',

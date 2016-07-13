@@ -10,7 +10,7 @@
     <div class="form-group">
       <%= f.label :title_id, class: 'col-sm-2 control-label' %>
       <div class="col-sm-10">
-        <%= collection_select(:title_id, :id, Colony.all, :id, :name, {prompt: t('helpers.select.prompt')},
+        <%= f.collection_select(:title_id, Colony.all, :id, :name, {prompt: t('helpers.select.prompt')},
                               {class: 'form-control col-md-12'}) %>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="form-group">
       <%= f.label :gender_id, class: 'col-sm-2 control-label' %>
       <div class="col-sm-10">
-        <%= collection_select(:gender_id, :id, Gender.all, :id, :name, {prompt: t('helpers.select.prompt')},
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {prompt: t('helpers.select.prompt')},
                               {class: 'form-control col-md-12'}) %>
       </div>
     </div>

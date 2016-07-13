@@ -28,7 +28,7 @@ class ColoniesController < ApplicationController
 
     respond_to do |format|
       if @colony.save
-        format.html { redirect_to @colony, notice: 'Colony was successfully created.' }
+        format.html { redirect_to colonies_url, notice: 'Colony was successfully created.' }
         format.json { render :show, status: :created, location: @colony }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ColoniesController < ApplicationController
   def update
     respond_to do |format|
       if @colony.update(colony_params)
-        format.html { redirect_to @colony, notice: 'Colony was successfully updated.' }
+        format.html { redirect_to colonies_url, notice: 'Colony was successfully updated.' }
         format.json { render :show, status: :ok, location: @colony }
       else
         format.html { render :edit }
