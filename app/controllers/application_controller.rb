@@ -48,6 +48,39 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || authenticated_root_path || unauthenticated_root_path)
   end
 
+  # Creates the records of the States, Cities and Colonies based on an excel file.
+  def importation
+    Dir.mkdir(importation_route) unless File.exists?(importation_route)
+    spreadsheet = Dir.glob("#{importation_route}/*")[0]
+    xlsx = Roo::Spreadsheet.open(spreadsheet)
+
+    xlsx.each_with_pagename do |name, sheet|
+      unless name.include?('Nota')
+        state = State.find_by_name(name)
+        unless state
+          state = State.create(name: name)
+        end
+        sheet.each_with_index(D_mnpio: 'mnpio', d_asenta: 'asenta',
+                              d_codigo: 'codigo') do |attributes, index|
+          unless index == 0
+            city = City.find_by(name: attributes[:D_mnpio], state_id: state&.id)
+            unless city
+              city = City.create(name: attributes[:D_mnpio], state_id: state&.id)
+            end
+            colony = Colony.find_by(name: attributes[:d_asenta], postcode: attributes[:d_codigo], city_id: city&.id)
+            unless colony
+              Colony.create(name: attributes[:d_asenta], postcode: attributes[:d_codigo], city_id: city&.id)
+            end
+          end
+        end
+      end
+    end
+  end
+
+  def importation_route
+    Rails.root.join('importation').to_s
+  end
+
   # Display flash messages for custom validations.
   def flash_messages(errors)
     errors.each { |message| flash['alert_'+ message.gsub(/\s+/, '_')] = message }

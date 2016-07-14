@@ -127,6 +127,9 @@ gem 'browser', '~> 2.0.2'
 # Pg is the Ruby interface to the PostgreSQL RDBMS.
 gem 'pg', '~> 0.18.4'
 
+# Roo implements read access for all common spreadsheet types.
+gem 'roo', '~> 1.13.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
