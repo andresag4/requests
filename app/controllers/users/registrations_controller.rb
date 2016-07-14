@@ -166,17 +166,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :mother_last_name,
-                                 :role_id, :area_id)
+                                 :role_id, :area_id, phones_attributes: [:id, :tag, :number, :_destroy])
   end
 
   def account_update_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :mother_last_name,
-                                 :role_id, :area_id)
+                                 :role_id, :area_id, phones_attributes: [:id, :tag, :number, :_destroy])
   end
 
   def profile_update_params
     params.require(:user).permit(:email, :current_password, :password, :password_confirmation, :first_name, :last_name,
-                                 :mother_last_name)
+                                 :mother_last_name, phones_attributes: [:id, :tag, :number, :_destroy])
   end
 
   def needs_password?

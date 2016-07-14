@@ -54,10 +54,14 @@ class AreasController < ApplicationController
   # DELETE /areas/1
   # DELETE /areas/1.json
   def destroy
-    @area.destroy
-    respond_to do |format|
-      format.html { redirect_to areas_url, notice: 'Area was successfully destroyed.' }
-      format.json { head :no_content }
+    if @area.can_destroy?
+      @area.destroy
+      respond_to do |format|
+        format.html { redirect_to areas_url, notice: 'Area was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to areas_url, error: 'The area couldnt be destroyrd' }
     end
   end
 

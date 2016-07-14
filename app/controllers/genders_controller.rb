@@ -54,10 +54,14 @@ class GendersController < ApplicationController
   # DELETE /genders/1
   # DELETE /genders/1.json
   def destroy
-    @gender.destroy
-    respond_to do |format|
-      format.html { redirect_to genders_url, notice: 'Gender was successfully destroyed.' }
-      format.json { head :no_content }
+    if @gender.can_destroy?
+      @gender.destroy
+      respond_to do |format|
+        format.html { redirect_to genders_url, notice: 'Gender was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to genders_url, notice: 'The gender was not destroyed.' }
     end
   end
 

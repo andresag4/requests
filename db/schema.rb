@@ -82,14 +82,14 @@ ActiveRecord::Schema.define(version: 20160714150426) do
   add_index "complaints", ["request_id"], name: "index_complaints_on_request_id", using: :btree
 
   create_table "contact_phones", force: :cascade do |t|
-    t.integer  "contact_id"
+    t.integer  "general_information_id"
     t.string   "tag"
     t.string   "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "contact_phones", ["contact_id"], name: "index_contact_phones_on_contact_id", using: :btree
+  add_index "contact_phones", ["general_information_id"], name: "index_contact_phones_on_general_information_id", using: :btree
 
   create_table "contacts", force: :cascade do |t|
     t.integer  "request_id"
@@ -170,6 +170,16 @@ ActiveRecord::Schema.define(version: 20160714150426) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "phones", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "tag"
+    t.string   "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "phones", ["user_id"], name: "index_phones_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "request_id"
@@ -294,7 +304,7 @@ ActiveRecord::Schema.define(version: 20160714150426) do
   add_foreign_key "colonies", "cities"
   add_foreign_key "complaints", "categories"
   add_foreign_key "complaints", "requests"
-  add_foreign_key "contact_phones", "contacts"
+  add_foreign_key "contact_phones", "general_informations"
   add_foreign_key "contacts", "cities"
   add_foreign_key "contacts", "colonies"
   add_foreign_key "contacts", "requests"
@@ -305,6 +315,7 @@ ActiveRecord::Schema.define(version: 20160714150426) do
   add_foreign_key "languages", "resumes"
   add_foreign_key "permission_roles", "permissions"
   add_foreign_key "permission_roles", "roles"
+  add_foreign_key "phones", "users"
   add_foreign_key "projects", "categories"
   add_foreign_key "projects", "requests"
   add_foreign_key "request_files", "requests"

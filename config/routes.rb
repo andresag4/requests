@@ -68,7 +68,12 @@ Rails.application.routes.draw do
       get '/requests/new/audience', to: 'requests#new_audience', as: :new_audience
       get '/requests/new/resume', to: 'requests#new_resume', as: :new_resume
 
-      resources :requests
+      get '/project_requests', to: 'requests#index_projects', as: :index_projects
+      get '/project_complaints', to: 'requests#index_complaints', as: :index_complaints
+      get '/project_audiences', to: 'requests#index_audiences', as: :index_audiences
+      get '/project_resumes', to: 'requests#index_resumes', as: :index_resumes
+
+      resources :requests, except: [:new]
     end
 
     # Allows the execution of the back button in the login options.

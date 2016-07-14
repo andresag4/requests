@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.label :number, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-3 no-padding-right">
+        <%= f.text_field :tag, class: 'form-control', placeholder: 'Tipo' %>
+      </div>
+      <div class="col-sm-7 inline-flex">
+        <%= f.text_field :number, class: 'form-control', placeholder: 'Número' %>
+        <%= link_to_remove_association '<i class="fa fa-times"></i>'.html_safe, f, class:' btn btn-flat btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>

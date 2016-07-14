@@ -54,10 +54,14 @@ class ColoniesController < ApplicationController
   # DELETE /colonies/1
   # DELETE /colonies/1.json
   def destroy
-    @colony.destroy
-    respond_to do |format|
-      format.html { redirect_to colonies_url, notice: 'Colony was successfully destroyed.' }
-      format.json { head :no_content }
+    if @colony.can_destroy?
+      @colony.destroy
+      respond_to do |format|
+        format.html { redirect_to colonies_url, notice: 'Colony was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to colonies_url, notice: 'The colony was not destroyed.' }
     end
   end
 

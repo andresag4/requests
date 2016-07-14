@@ -7,15 +7,39 @@ class RequestsController < ApplicationController
     @requests = Request.all.paginate(page: params[:page], per_page: 15)
   end
 
+  def index_projects
+    @requests = Request.projects.paginate(page: params[:page], per_page: 15)
+
+    render 'index'
+  end
+
+  def index_complaints
+    @requests = Request.complaints.paginate(page: params[:page], per_page: 15)
+
+    render 'index'
+  end
+
+  def index_audiences
+    @requests = Request.audiences.paginate(page: params[:page], per_page: 15)
+
+    render 'index'
+  end
+
+  def index_resumes
+    @requests = Request.resumes.paginate(page: params[:page], per_page: 15)
+
+    render 'index'
+  end
+
   # GET /requests/1
   # GET /requests/1.json
   def show
   end
 
   # GET /requests/new
-  def new
-    @request = Request.new
-  end
+  # def new
+  #   @request = Request.new
+  # end
 
   def new_project
     @request = Request.new(data_type: :project)
@@ -61,9 +85,11 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(request_params)
+    @request.user_id = current_user.id
 
     respond_to do |format|
       if @request.save
+        @request.set_folio
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
@@ -109,7 +135,8 @@ class RequestsController < ApplicationController
                                     project_attributes: [:id, :category_id, :name, :description],
                                     general_information_attributes: [:id, :request_id, :title_id, :name, :father_last_name,
                                                                      :mother_last_name, :birthdate, :gender_id, :email,
-                                                                     :position, :organization, :ip, :anonymous],
+                                                                     :position, :organization, :ip, :anonymous,
+                                                                     contact_phones_attributes: [:id, :tag, :number, :_destroy]],
                                     contact_attributes: [:id, :request_id, :state_id, :city_id, :colony_id, :postcode,
                                                          :street, :internal_number, :external_number],
                                     studies_attributes: [:id, :institution, :degree, :end_study, :_destroy],

@@ -54,10 +54,14 @@ class TitlesController < ApplicationController
   # DELETE /titles/1
   # DELETE /titles/1.json
   def destroy
-    @title.destroy
-    respond_to do |format|
-      format.html { redirect_to titles_url, notice: 'Title was successfully destroyed.' }
-      format.json { head :no_content }
+    if @title.can_destroy?
+      @title.destroy
+      respond_to do |format|
+        format.html { redirect_to titles_url, notice: 'Title was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to titles_url, notice: 'The title was not destroyed.' }
     end
   end
 

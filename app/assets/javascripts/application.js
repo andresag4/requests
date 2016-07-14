@@ -25,6 +25,10 @@
 //= require rails.validations
 //= require cocoon
 //= require general
+//= require moment
+//= require bootstrap-datetimepicker
+//= require datetimepicker_translations
+//= require cocoon
 //= require pace/pace
 //= require turbolinks
 //= require_tree .

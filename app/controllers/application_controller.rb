@@ -85,4 +85,12 @@ class ApplicationController < ActionController::Base
   def flash_messages(errors)
     errors.each { |message| flash['alert_'+ message.gsub(/\s+/, '_')] = message }
   end
+
+  def can_destroy?(object)
+    object.class.reflect_on_all_associations.each do |assoc|
+      return false if assoc.macro == :has_many and !object.send(assoc.name).empty?
+      return false if assoc.macro == :has_one and !object.send(assoc.name).nil?
+    end
+    true
+  end
 end
