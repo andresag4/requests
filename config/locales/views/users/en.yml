@@ -150,7 +150,4 @@ en:
       new:
         blocked_account: Is your account blocked?
         user_email: User's email
-  breadcrumbs:
-    users: Users
-    change_password: Change password
     change_user_password: Change password %{username}

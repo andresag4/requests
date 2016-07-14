@@ -24,5 +24,10 @@ li.active-menu {
 
 .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span {
   margin-left: 0 !important;
+}
 
+//form containers
+#request > form > .box-primary {
+  border-top: 1px solid #dedede;
+  border-radius: 0;
 }
