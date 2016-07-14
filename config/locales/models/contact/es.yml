@@ -1,0 +1,11 @@
+es:
+  activerecord:
+    attributes:
+      contact:
+        state_id: Estado
+        city_id: Ciudad
+        colony_id: Colonia
+        postcode: Código postal
+        street: Calle
+        internal_number: Número interno
+        external_number: Número externo

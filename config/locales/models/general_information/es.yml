@@ -1,0 +1,15 @@
+es:
+  activerecord:
+    attributes:
+      general_information:
+        name: Nombre
+        father_last_name: Apellido paterno
+        mother_last_name: Apellido materno
+        birthdate: Fecha de nacimiento
+        email: Email
+        position: Puestos
+        organization: Organización
+        ip: Dirección IP
+        anonymous: Anónimo
+        title_id: Título
+        gender_id: Género

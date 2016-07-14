@@ -1,9 +1,14 @@
 es:
   activerecord:
     attributes:
-      role:
+      request:
         folio: Folio
         reception_date: Fecha de Recepción
         data_type: Tipo de Solicitud
-        user_id: Capturista
         entry_id: Entrada
+        category_id: Categoría
+  data_types:
+    project: Proyecto
+    complaint: Queja o Denuncia
+    audience: Audiencia
+    resume: Curriculum

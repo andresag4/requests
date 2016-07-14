@@ -1,0 +1,18 @@
+<div class="nested-fields">
+  <div class="group-form row">
+    <div class="col-md-7">
+      <%= f.text_field :institution, class: 'form-control phone-mask', placeholder: t('.institution') %>
+    </div>
+    <div class="col-md-7">
+      <%= f.text_field :degree, class: 'form-control phone-mask', placeholder: t('.degree') %>
+    </div>
+    <div class="col-md-5">
+      <div class="input-icon right">
+        <%= f.text_field :end_study, class: 'form-control extension-mask', placeholder: t('.end_study') %>
+        <%= link_to_remove_association '<i class="fa fa-times"></i>'.html_safe, f, class: 'remove-require',
+                                       title: t('.destroy') %>
+      </div>
+    </div>
+  </div>
+  <br/>
+</div>

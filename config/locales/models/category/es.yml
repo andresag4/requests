@@ -1,0 +1,11 @@
+es:
+  activerecord:
+    attributes:
+      category:
+        name: Nombre
+        data_type: Tipo de Solicitud
+  data_types:
+    project: Proyecto
+    complaint: Queja o Denuncia
+    audience: Audiencia
+    resume: Curriculum

@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      project:
+        name: Name
+        description: Description
+        category_id: Category

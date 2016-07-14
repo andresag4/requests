@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    attributes:
+      city:
+        name: Nombres
+        state_id: Estado
