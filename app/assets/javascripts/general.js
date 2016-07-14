@@ -9,6 +9,7 @@ $(window).bind('page:change', function () {
         radioClass: 'iradio_square-red',
         increaseArea: '20%' // optional
     });
+    $('[data-toggle="tooltip"]').tooltip();
     $.AdminLTE.layout.fix();
     $.AdminLTE.pushMenu.activate($.AdminLTE.options.sidebarToggleSelector);
 });
