@@ -74,6 +74,9 @@ Rails.application.routes.draw do
     get '/login', to: 'devise/seasons#new'
   end
 
+
+  post '/application/importation', to: 'application#importation', as: :importation
+
   # Get a list of actions that a controller has.
   get '/permissions/new/get_controller_actions', to: 'permissions#get_controller_actions', as: :get_controller_actions
 

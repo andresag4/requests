@@ -16,4 +16,5 @@ class Colony < ActiveRecord::Base
   belongs_to :city
 
   validates_presence_of :name, :city_id
+  validates_uniqueness_of :name , scope: [:postcode]
 end
