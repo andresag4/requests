@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      audience:
+        subject: Asunto
+        description: Descripción
+        category_id: Categoría

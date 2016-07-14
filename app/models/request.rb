@@ -34,7 +34,7 @@ class Request < ActiveRecord::Base
   accepts_nested_attributes_for :general_information
 
   def self.i18n_data_type(hash = {})
-    data_types.keys.each { |key| hash[I18n.t("data_type.#{key}")] = key }
+    data_types.keys.each { |key| hash[I18n.t("data_types.#{key}")] = key }
     hash
   end
 end

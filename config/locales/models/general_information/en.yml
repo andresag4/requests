@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    attributes:
+      general_information:
+        name: Name
+        father_last_name: Father last name
+        mother_last_name: Mother last name
+        birthdate: Birthdate
+        email: Email
+        position: Position
+        organization: Organization
+        ip: IP address
+        anonymous: Anonymous
+        title_id: Title
+        gender_id: Gender

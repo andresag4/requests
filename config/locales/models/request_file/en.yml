@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      request_file:
+        file_file_name: Name
+        file_content_type: Extension
+        file_file_size: Size

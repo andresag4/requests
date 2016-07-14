@@ -10,8 +10,15 @@
 #
 
 class Resume < ActiveRecord::Base
-  belongs_to :reques
+  belongs_to :request
   belongs_to :category
+  has_many :languages, dependent: :destroy
+  has_many :studies, dependent: :destroy
+  has_many :abilities, dependent: :destroy
+
+  accepts_nested_attributes_for :languages, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :studies, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :abilities, allow_destroy: true, reject_if: :all_blank
 
   validates_presence_of :category_id
 end

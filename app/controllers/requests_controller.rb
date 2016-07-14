@@ -111,6 +111,9 @@ class RequestsController < ApplicationController
                                                                      :mother_last_name, :birthdate, :gender_id, :email,
                                                                      :position, :organization, :ip, :anonymous],
                                     contact_attributes: [:id, :request_id, :state_id, :city_id, :colony_id, :postcode,
-                                                         :street, :internal_number, :external_number])
+                                                         :street, :internal_number, :external_number],
+                                    studies_attributes: [:id, :institution, :degree, :end_study, :_destroy],
+                                    abilities_attributes: [:id, :name, :_destroy],
+                                    languajes_attributes: [:id, :name, :percentage, :_destroy])
   end
 end

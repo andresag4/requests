@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      study:
+        institution: Name
+        degree: Degree
+        end_study: End study

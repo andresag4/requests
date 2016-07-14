@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    attributes:
+      contact_phone:
+        tag: Tipo
+        number: Número

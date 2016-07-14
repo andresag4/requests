@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      complaint:
+        subject: Asunto
+        notes: Notas
+        category_id: Categoría

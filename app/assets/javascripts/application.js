@@ -23,6 +23,7 @@
 //= require icheck
 //= require app
 //= require rails.validations
+//= require cocoon
 //= require general
 //= require pace/pace
 //= require turbolinks

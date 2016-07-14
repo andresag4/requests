@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      study:
+        institution: Institución
+        degree: Grado de estudio
+        end_study: Fin de estudio

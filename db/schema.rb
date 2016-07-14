@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710025941) do
+ActiveRecord::Schema.define(version: 20160714150426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abilities", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "resume_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "abilities", ["resume_id"], name: "index_abilities_on_resume_id", using: :btree
 
   create_table "audiences", force: :cascade do |t|
     t.integer  "request_id"
@@ -127,6 +136,16 @@ ActiveRecord::Schema.define(version: 20160710025941) do
   add_index "general_informations", ["request_id"], name: "index_general_informations_on_request_id", using: :btree
   add_index "general_informations", ["title_id"], name: "index_general_informations_on_title_id", using: :btree
 
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "percentage"
+    t.integer  "resume_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "languages", ["resume_id"], name: "index_languages_on_resume_id", using: :btree
+
   create_table "permission_roles", force: :cascade do |t|
     t.integer  "role_id"
     t.integer  "permission_id"
@@ -208,6 +227,17 @@ ActiveRecord::Schema.define(version: 20160710025941) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "studies", force: :cascade do |t|
+    t.string   "institution"
+    t.string   "degree"
+    t.date     "end_study"
+    t.integer  "resume_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "studies", ["resume_id"], name: "index_studies_on_resume_id", using: :btree
+
   create_table "titles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -246,6 +276,7 @@ ActiveRecord::Schema.define(version: 20160710025941) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "abilities", "resumes"
   add_foreign_key "audiences", "categories"
   add_foreign_key "audiences", "requests"
   add_foreign_key "cities", "states"
@@ -260,6 +291,7 @@ ActiveRecord::Schema.define(version: 20160710025941) do
   add_foreign_key "general_informations", "genders"
   add_foreign_key "general_informations", "requests"
   add_foreign_key "general_informations", "titles"
+  add_foreign_key "languages", "resumes"
   add_foreign_key "permission_roles", "permissions"
   add_foreign_key "permission_roles", "roles"
   add_foreign_key "projects", "categories"
@@ -269,5 +301,6 @@ ActiveRecord::Schema.define(version: 20160710025941) do
   add_foreign_key "requests", "users"
   add_foreign_key "resumes", "categories"
   add_foreign_key "resumes", "requests"
+  add_foreign_key "studies", "resumes"
   add_foreign_key "users", "roles"
 end
