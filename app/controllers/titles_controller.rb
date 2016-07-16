@@ -28,7 +28,7 @@ class TitlesController < ApplicationController
 
     respond_to do |format|
       if @title.save
-        format.html { redirect_to @title, notice: 'Title was successfully created.' }
+        format.html { redirect_to titles_url, notice: 'Title was successfully created.' }
         format.json { render :show, status: :created, location: @title }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TitlesController < ApplicationController
   def update
     respond_to do |format|
       if @title.update(title_params)
-        format.html { redirect_to @title, notice: 'Title was successfully updated.' }
+        format.html { redirect_to titles_url, notice: 'Title was successfully updated.' }
         format.json { render :show, status: :ok, location: @title }
       else
         format.html { render :edit }
@@ -54,10 +54,14 @@ class TitlesController < ApplicationController
   # DELETE /titles/1
   # DELETE /titles/1.json
   def destroy
-    @title.destroy
-    respond_to do |format|
-      format.html { redirect_to titles_url, notice: 'Title was successfully destroyed.' }
-      format.json { head :no_content }
+    if @title.can_destroy?
+      @title.destroy
+      respond_to do |format|
+        format.html { redirect_to titles_url, notice: 'Title was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to titles_url, notice: 'The title was not destroyed.' }
     end
   end
 

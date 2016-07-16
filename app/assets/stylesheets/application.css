@@ -17,8 +17,10 @@
  *= require font-awesome
  *= require _bootstrap-sprockets
  *= require _bootstrap
+ *= require _variables
  *= require icheck/square/_all
  *= require bootstrap-slider/slider
+ *= require bootstrap-datetimepicker
  *= require pace/yellow/pace-theme-flash
  *= require toastr/toastr.min
  *= require AdminLTE

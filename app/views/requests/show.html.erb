@@ -1,29 +1,100 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8 col-md-offset-2">
+  <section class="content-header">
+    <h1>Solicitud</h1>
+  </section>
+  <section class="content">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Solicitud</h3>
+        <div class="box-tools">
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <%= form_for(@request, html: {class: 'form-horizontal'}) do |f| %>
+          <div class="box-body">
+            <div class="form-group">
+              <%= label :folio, 'Folio', {class: 'col-sm-2 control-label'} %>
+              <div class="col-sm-10">
+                <div class="form-control col-md-12">
+                  <%= @request.folio%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= label :reception_date, 'Fecha de recepción', {class: 'col-sm-2 control-label'} %>
+              <div class="col-sm-10">
+                <div class="form-control col-md-12">
+                  <%= l @request.reception_date, format: :custom %>
+                </div>
+              </div>
+            </div>
 
-<p>
-  <strong>Folio:</strong>
-  <%= @request.folio %>
-</p>
+            <div class="form-group">
+              <%= f.label :area_id, class: 'col-sm-2 control-label' %>
+              <div class="col-sm-10">
+                <%= f.collection_select(:area_id, Area.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                                        {class: 'form-control col-md-12'}) %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :responsible_id, class: 'col-sm-2 control-label' %>
+              <div class="col-sm-10">
+                <%= f.collection_select(:responsible_id, User.all, :id, :full_name, {prompt: t('helpers.select.prompt')},
+                                        {class: 'form-control col-md-12'}) %>
+              </div>
+            </div>
 
-<p>
-  <strong>Reception date:</strong>
-  <%= @request.reception_date %>
-</p>
+            <%= f.hidden_field :data_type %>
 
-<p>
-  <strong>Type:</strong>
-  <%= @request.data_type %>
-</p>
+            <div class="form-group">
+              <%= f.label :entry_id, class: 'col-sm-2 control-label' %>
+              <div class="col-sm-10">
+                <%= f.collection_select(:entry_id, Entry.all, :id, :name, {prompt: t('helpers.select.prompt')},
+                                        {class: 'form-control col-md-12'}) %>
+              </div>
+            </div>
+          </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @request.user %>
-</p>
+          <% case %>
+      <% when @request.project? %>
+              <%= f.fields_for :project, @request.project do |project| %>
+                  <%= render 'project_form', f: project %>
+              <% end %>
+          <% when @request.complaint? %>
+              <%= f.fields_for :complaint, @request.complaint do |complaint| %>
+                  <%= render 'complaint_form', f: complaint %>
+              <% end %>
+          <% when @request.audience? %>
+              <%= f.fields_for :audience, @request.audience do |audience| %>
+                  <%= render 'audience_form', f: audience %>
+              <% end %>
+          <% when @request.resume? %>
+              <%= f.fields_for :resume, @request.resume do |resume| %>
+                  <%= render 'resume_form', f: resume %>
+              <% end %>
+          <% end %>
 
-<p>
-  <strong>Entry:</strong>
-  <%= @request.entry %>
-</p>
+          <%= f.fields_for :general_information, @request.general_information do |general_information| %>
+              <%= render 'general_information_form', f: general_information %>
+          <% end %>
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+          <%= f.fields_for :contact, @request.contact do |contact| %>
+              <%= render 'contact_form', f: contact %>
+          <% end %>
+
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <div class="col-sm-offset-2">
+              <%= link_to 'Regresar', requests_path, class: 'btn btn-danger' %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+
+
+
+

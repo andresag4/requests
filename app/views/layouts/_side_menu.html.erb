@@ -10,59 +10,83 @@
           <i class="fa fa-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
       </li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-lightbulb-o"></i> <span>Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Proyecto'.html_safe, 'javascript:;' %>
+      <% if has_policy(Request, %w(new_project index_projects)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-lightbulb-o"></i> <span>Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Proyecto'.html_safe, new_project_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Proyectos'.html_safe, index_projects_path %>
+              </li>
+            </ul>
           </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Proyectos'.html_safe, 'javascript:;' %>
+      <% end %>
+      <% if has_policy(Request, %w(new_complaint index_complaints)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-exclamation"></i> <span>Quejas y Denuncias</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Queja o Denuncia'.html_safe, new_complaint_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Quejas y Denuncias'.html_safe, index_complaints_path %>
+              </li>
+            </ul>
           </li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-exclamation"></i> <span>Quejas y Denuncias</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nueva Queja o Denuncia'.html_safe, 'javascript:;' %>
+      <% end %>
+      <% if has_policy(Request, %w(new_audience index_audiences)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-microphone"></i> <span>Audiencias</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Audiencia'.html_safe, new_audience_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Audiencias'.html_safe, index_audiences_path %>
+              </li>
+            </ul>
           </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Quejas y Denuncias'.html_safe, 'javascript:;' %>
+      <% end %>
+      <% if has_policy(Request, %w(new_resume index_resumes)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-file-text-o"></i> <span>Curriculums</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Curriculum'.html_safe, new_resume_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Curriculums'.html_safe, index_resumes_path %>
+              </li>
+            </ul>
           </li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-microphone"></i> <span>Audiencias</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nueva Audiencia'.html_safe, 'javascript:;' %>
-          </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Audiencias'.html_safe, 'javascript:;' %>
-          </li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="javascript:;">
-          <i class="fa fa-file-text-o"></i> <span>Curriculums</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Nuevo Curriculum'.html_safe, 'javascript:;' %>
-          </li>
-          <li>
-            <%= link_item '<i class="fa fa-circle-o"></i> Listado de Curriculums'.html_safe, 'javascript:;' %>
-          </li>
-        </ul>
-      </li>
+      <% end %>
       <li class="header">Administración</li>
+      <% if has_policy(Area, %w(new index)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-sitemap"></i> <span>Áreas</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Área'.html_safe, new_area_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Áreas'.html_safe, areas_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
       <% if has_policy(Category, %w(new index)) %>
           <li class="treeview">
             <a href="javascript:;">

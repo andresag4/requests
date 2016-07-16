@@ -5,7 +5,7 @@
   <div class="box">
     <div class="box-header with-border">
       <h3 class="box-title">
-        <%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_request_path, class: 'btn btn-flat bg-green' %>
+        <%#= link_to '<i class="fa fa-plus"></i>'.html_safe, new_request_path, class: 'btn btn-flat bg-green' %>
       </h3>
       <div class="box-tools">
         <div class="input-group input-group-sm" style="width: 150px;">
@@ -22,7 +22,6 @@
         <tr>
           <th>Folio</th>
           <th>Fecha de Recepción</th>
-          <th>Tipo</th>
           <th>Capturista</th>
           <th>Entrada</th>
           <th>Acciones</th>
@@ -32,10 +31,9 @@
         <% @requests.each do |request| %>
             <tr>
               <td><%= request.folio %></td>
-              <td><%= request.reception_date %></td>
-              <td><%= request.data_type %></td>
-              <td><%= request.user %></td>
-              <td><%= request.entry %></td>
+              <td><%= l request.reception_date, format: :custom %></td>
+              <td><%= request.user.full_name %></td>
+              <td><%= request.entry.name %></td>
               <td class="actions">
                 <div>
                   <%= link_to '<i class="fa fa-search"></i>'.html_safe, request, class: 'btn btn-flat btn-xs bg-green' %>

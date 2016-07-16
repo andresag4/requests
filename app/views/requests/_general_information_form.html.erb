@@ -10,7 +10,7 @@
     <div class="form-group">
       <%= f.label :title_id, class: 'col-sm-2 control-label' %>
       <div class="col-sm-10">
-        <%= collection_select(:title_id, :id, Colony.all, :id, :name, {prompt: t('helpers.select.prompt')},
+        <%= f.collection_select(:title_id, Title.all, :id, :name, {prompt: t('helpers.select.prompt')},
                               {class: 'form-control col-md-12'}) %>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="form-group">
       <%= f.label :gender_id, class: 'col-sm-2 control-label' %>
       <div class="col-sm-10">
-        <%= collection_select(:gender_id, :id, Gender.all, :id, :name, {prompt: t('helpers.select.prompt')},
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {prompt: t('helpers.select.prompt')},
                               {class: 'form-control col-md-12'}) %>
       </div>
     </div>
@@ -63,5 +63,20 @@
         <%= f.text_field :organization, class: 'form-control' %>
       </div>
     </div>
+
+    <div id="phone-field">
+      <%= f.fields_for :contact_phones do |phone| %>
+          <%= render '/shared/phone_fields', f: phone %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <div id="add-phone" class="links col-md-10 col-md-offset-2">
+        <%= link_to_add_association "<i class='fa fa-plus'></i> Agregar Teléfono".html_safe, f,
+                                    :contact_phones, class: 'form-control',
+                                    partial: '/shared/phone_fields' %>
+      </div>
+    </div>
+
   </div>
 </div>

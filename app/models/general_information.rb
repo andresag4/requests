@@ -20,7 +20,21 @@
 #
 
 class GeneralInformation < ActiveRecord::Base
+  has_many :contact_phones
+
   belongs_to :request
   belongs_to :title
   belongs_to :gender
+
+  validates_presence_of :name, :father_last_name, :mother_last_name
+
+  accepts_nested_attributes_for :contact_phones, allow_destroy: true, reject_if: :all_blank
+
+  def validate_one_contact_form
+
+  end
+
+  def anonymous?
+    self.anonymous
+  end
 end

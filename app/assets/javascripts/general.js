@@ -12,4 +12,10 @@ $(window).bind('page:change', function () {
     $('[data-toggle="tooltip"]').tooltip();
     $.AdminLTE.layout.fix();
     $.AdminLTE.pushMenu.activate($.AdminLTE.options.sidebarToggleSelector);
+
+    $('.date-picker-form').datetimepicker({
+        locale: locale,
+        format: 'D/M/YYYY',
+        showTodayButton: true
+    });
 });

@@ -7,7 +7,7 @@ es:
         mother_last_name: Apellido materno
         birthdate: Fecha de nacimiento
         email: Email
-        position: Puestos
+        position: Puesto
         organization: Organización
         ip: Dirección IP
         anonymous: Anónimo

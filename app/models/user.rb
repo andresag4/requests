@@ -26,6 +26,7 @@
 #  unlock_token           :string
 #  locked_at              :datetime
 #  role_id                :integer
+#  area_id                :integer
 #
 
 class User < ActiveRecord::Base
@@ -39,8 +40,14 @@ class User < ActiveRecord::Base
   attr_accessor :current_password
 
   has_many :requests
+  has_many :responsible_requests, foreign_key: :user_id, class_name: 'Request'
+  has_many :phones
 
   belongs_to :role
+  belongs_to :area
+
+  accepts_nested_attributes_for :phones, allow_destroy: true, reject_if: :all_blank
+
   delegate :name, :scope, :key, to: :role, prefix: true
 
   def full_name
