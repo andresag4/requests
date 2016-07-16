@@ -15,7 +15,7 @@ class Category < ActiveRecord::Base
   has_many :audiences
   has_many :resumes
 
-  enum data_type: [:project, :complaint, :audience, :resume]
+  enum data_type: [:project, :complaint, :audience, :resume, :management]
 
   validates_presence_of :name, :data_type
 

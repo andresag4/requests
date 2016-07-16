@@ -31,6 +31,12 @@ class RequestsController < ApplicationController
     render 'index'
   end
 
+  def index_managements
+    @requests = Request.management.paginate(page: params[:page], per_page: 15)
+
+    render 'index'
+  end
+
   # GET /requests/1
   # GET /requests/1.json
   def show
@@ -72,6 +78,15 @@ class RequestsController < ApplicationController
     @request = Request.new(data_type: :resume)
     @request.build_contact
     @request.build_resume
+    @request.build_general_information
+
+    render 'new'
+  end
+
+  def new_management
+    @request = Request.new(data_type: :management)
+    @request.build_contact
+    @request.build_management
     @request.build_general_information
 
     render 'new'
@@ -131,7 +146,7 @@ class RequestsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def request_params
-    params.require(:request).permit(:reception_date, :data_type, :user_id, :entry_id,
+    params.require(:request).permit(:reception_date, :data_type, :user_id, :entry_id, :area_id, :responsible_id,
                                     project_attributes: [:id, :category_id, :name, :description],
                                     general_information_attributes: [:id, :request_id, :title_id, :name, :father_last_name,
                                                                      :mother_last_name, :birthdate, :gender_id, :email,
@@ -139,8 +154,14 @@ class RequestsController < ApplicationController
                                                                      contact_phones_attributes: [:id, :tag, :number, :_destroy]],
                                     contact_attributes: [:id, :request_id, :state_id, :city_id, :colony_id, :postcode,
                                                          :street, :internal_number, :external_number],
-                                    studies_attributes: [:id, :institution, :degree, :end_study, :_destroy],
-                                    abilities_attributes: [:id, :name, :_destroy],
-                                    languajes_attributes: [:id, :name, :percentage, :_destroy])
+                                    complaint_attributes: [:id, :category_id, :subject, :notes],
+                                    audience_attributes: [:id, :category_id, :subject, :description],
+                                    management_attributes: [:id, :category_id, :subject, :description],
+                                    resume_attributes: [:id, :category_id,
+                                                        studies_attributes: [:id, :institution, :degree, :end_study, :_destroy],
+                                                        abilities_attributes: [:id, :name, :_destroy],
+                                                        languages_attributes: [:id, :name, :percentage, :_destroy],],
+
+                                    request_files_attributes: [:file])
   end
 end

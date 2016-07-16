@@ -19,6 +19,7 @@ class Request < ActiveRecord::Base
   has_one :complaint
   has_one :audience
   has_one :resume
+  has_one :management
   has_one :contact
   has_one :general_information
 
@@ -29,13 +30,18 @@ class Request < ActiveRecord::Base
   belongs_to :responsible, foreign_key: :responsible_id, class_name: 'User'
   belongs_to :entry
 
-  enum data_type: [:project, :complaint, :audience, :resume]
+  enum data_type: [:project, :complaint, :audience, :resume, :management]
 
   validates_presence_of :reception_date, :data_type, :entry_id
 
   accepts_nested_attributes_for :project
+  accepts_nested_attributes_for :complaint
+  accepts_nested_attributes_for :audience
+  accepts_nested_attributes_for :resume
+  accepts_nested_attributes_for :management
   accepts_nested_attributes_for :contact
   accepts_nested_attributes_for :general_information
+  accepts_nested_attributes_for :request_files, allow_destroy: true, reject_if: :all_blank
 
   def self.i18n_data_type(hash = {})
     data_types.keys.each { |key| hash[I18n.t("data_types.#{key}")] = key }

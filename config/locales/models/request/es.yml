@@ -5,6 +5,9 @@ es:
         folio: Folio
         reception_date: Fecha de Recepción
         data_type: Tipo de Solicitud
+        responsible_id: Responsable
+        area_id: Área
+        user_id: Capturista
         entry_id: Entrada
         category_id: Categoría
   data_types:
@@ -12,3 +15,4 @@ es:
     complaint: Queja o Denuncia
     audience: Audiencia
     resume: Curriculum
+    management: Gestoría

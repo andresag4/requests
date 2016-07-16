@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714150426) do
+ActiveRecord::Schema.define(version: 20160716223604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,18 @@ ActiveRecord::Schema.define(version: 20160714150426) do
   end
 
   add_index "languages", ["resume_id"], name: "index_languages_on_resume_id", using: :btree
+
+  create_table "managements", force: :cascade do |t|
+    t.integer  "request_id"
+    t.integer  "category_id"
+    t.string   "subject"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "managements", ["category_id"], name: "index_managements_on_category_id", using: :btree
+  add_index "managements", ["request_id"], name: "index_managements_on_request_id", using: :btree
 
   create_table "permission_roles", force: :cascade do |t|
     t.integer  "role_id"
@@ -313,6 +325,8 @@ ActiveRecord::Schema.define(version: 20160714150426) do
   add_foreign_key "general_informations", "requests"
   add_foreign_key "general_informations", "titles"
   add_foreign_key "languages", "resumes"
+  add_foreign_key "managements", "categories"
+  add_foreign_key "managements", "requests"
   add_foreign_key "permission_roles", "permissions"
   add_foreign_key "permission_roles", "roles"
   add_foreign_key "phones", "users"
