@@ -34,6 +34,9 @@ li.active-menu {
 
 .inline-flex {
   display: inline-flex !important;
+  .btn{
+    height: 34px;
+  }
 }
 
 .no-padding-right {
@@ -42,4 +45,8 @@ li.active-menu {
 
 .no-margin-bottom {
   margin-bottom: 0 !important;
+}
+
+.padding-top {
+  padding-top: 15px !important;
 }

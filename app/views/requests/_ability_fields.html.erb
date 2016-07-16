@@ -1,13 +1,9 @@
-<div class="nested-fields">
-  <div class="group-form row">
-    <div class="col-md-7">
+<div class="nested-fields col-md-6">
+  <div class="group-form">
+    <div class="inline-flex">
       <%= f.text_field :name, class: 'form-control phone-mask', placeholder: t('.ability') %>
-    </div>
-    <div class="col-md-5">
-      <div class="input-icon right">
-        <%= link_to_remove_association '<i class="fa fa-times"></i>'.html_safe, f, class: 'remove-require',
-                                       title: t('.destroy') %>
-      </div>
+      <%= link_to_remove_association '<i class="fa fa-times"></i>'.html_safe, f,
+                                     class: 'remove-require btn btn-flat btn-default', title: t('.destroy') %>
     </div>
   </div>
   <br/>

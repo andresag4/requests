@@ -38,7 +38,7 @@
               </div>
             </div>
 
-            <div id="phone-field">
+            <div id="phone-field" class="row">
               <%= f.fields_for :phones do |phone| %>
                   <%= render '/shared/phone_fields', f: phone %>
               <% end %>

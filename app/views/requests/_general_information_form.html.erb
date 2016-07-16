@@ -10,7 +10,7 @@
     <div class="form-group">
       <%= f.label :title_id, class: 'col-sm-2 control-label' %>
       <div class="col-sm-10">
-        <%= f.collection_select(:title_id, Colony.all, :id, :name, {prompt: t('helpers.select.prompt')},
+        <%= f.collection_select(:title_id, Title.all, :id, :name, {prompt: t('helpers.select.prompt')},
                               {class: 'form-control col-md-12'}) %>
       </div>
     </div>

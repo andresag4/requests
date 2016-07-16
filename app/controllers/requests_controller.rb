@@ -8,25 +8,25 @@ class RequestsController < ApplicationController
   end
 
   def index_projects
-    @requests = Request.projects.paginate(page: params[:page], per_page: 15)
+    @requests = Request.project.paginate(page: params[:page], per_page: 15)
 
     render 'index'
   end
 
   def index_complaints
-    @requests = Request.complaints.paginate(page: params[:page], per_page: 15)
+    @requests = Request.complaint.paginate(page: params[:page], per_page: 15)
 
     render 'index'
   end
 
   def index_audiences
-    @requests = Request.audiences.paginate(page: params[:page], per_page: 15)
+    @requests = Request.audience.paginate(page: params[:page], per_page: 15)
 
     render 'index'
   end
 
   def index_resumes
-    @requests = Request.resumes.paginate(page: params[:page], per_page: 15)
+    @requests = Request.resume.paginate(page: params[:page], per_page: 15)
 
     render 'index'
   end
@@ -131,7 +131,7 @@ class RequestsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def request_params
-    params.require(:request).permit(:folio, :reception_date, :data_type, :user_id, :entry_id,
+    params.require(:request).permit(:reception_date, :data_type, :user_id, :entry_id,
                                     project_attributes: [:id, :category_id, :name, :description],
                                     general_information_attributes: [:id, :request_id, :title_id, :name, :father_last_name,
                                                                      :mother_last_name, :birthdate, :gender_id, :email,

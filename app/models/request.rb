@@ -37,11 +37,6 @@ class Request < ActiveRecord::Base
   accepts_nested_attributes_for :contact
   accepts_nested_attributes_for :general_information
 
-  scope :projects, -> { where(data_type: :project) }
-  scope :complaints, -> { where(data_type: :complaint) }
-  scope :audiences, -> { where(data_type: :audience) }
-  scope :resumes, -> { where(data_type: :resume) }
-
   def self.i18n_data_type(hash = {})
     data_types.keys.each { |key| hash[I18n.t("data_types.#{key}")] = key }
     hash
