@@ -71,6 +71,21 @@
             </ul>
           </li>
       <% end %>
+      <% if has_policy(Request, %w(new_management index_managements)) %>
+          <li class="treeview">
+            <a href="javascript:;">
+              <i class="fa fa-book"></i> <span>Gestorías</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Nueva Gestoría'.html_safe, new_management_path %>
+              </li>
+              <li>
+                <%= link_item '<i class="fa fa-circle-o"></i> Listado de Gestorías'.html_safe, index_managements_path %>
+              </li>
+            </ul>
+          </li>
+      <% end %>
       <li class="header">Administración</li>
       <% if has_policy(Area, %w(new index)) %>
           <li class="treeview">

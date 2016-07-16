@@ -67,11 +67,13 @@ Rails.application.routes.draw do
       get '/requests/new/complaint', to: 'requests#new_complaint', as: :new_complaint
       get '/requests/new/audience', to: 'requests#new_audience', as: :new_audience
       get '/requests/new/resume', to: 'requests#new_resume', as: :new_resume
+      get '/requests/new/management', to: 'requests#new_management', as: :new_management
 
       get '/project_requests', to: 'requests#index_projects', as: :index_projects
       get '/project_complaints', to: 'requests#index_complaints', as: :index_complaints
       get '/project_audiences', to: 'requests#index_audiences', as: :index_audiences
       get '/project_resumes', to: 'requests#index_resumes', as: :index_resumes
+      get '/project_managements', to: 'requests#index_managements', as: :index_managements
 
       resources :requests, except: [:new]
     end

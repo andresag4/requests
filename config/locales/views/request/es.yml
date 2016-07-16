@@ -29,10 +29,17 @@ es:
       add_abilities: Añadir habilidad
     audience_form:
       title: Audiencia
+    management_form:
+      title: Gestoría
     complaint_form:
       title: Queja o Denuncia
     contact_form:
       title: Contacto
+    file_form:
+      title: Archivos
+      name: Archivo
+    request_files:
+      add: Agregar archivo
     general_information_form:
       title: Información General
     project_form:

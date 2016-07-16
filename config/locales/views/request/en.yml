@@ -29,10 +29,17 @@ en:
       add_abilities: Add abilities
     audience_form:
       title: Audience
+    management_form:
+      title: Management
     complaint_form:
       title: Complaint or Denunciation
     contact_form:
       title: Contact
+    file_form:
+      title: Files
+      name: File
+    request_files:
+      add: Add file
     general_information_form:
       title: General information
     project_form:
