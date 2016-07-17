@@ -130,6 +130,12 @@ gem 'pg', '~> 0.18.4'
 # Roo implements read access for all common spreadsheet types.
 gem 'roo', '~> 1.13.2'
 
+# Wicked PDF uses the shell utility wkhtmltopdf to serve a PDF file to a user from HTML.
+gem 'wicked_pdf', '~> 1.0.6'
+
+# A wrapper for wkhtmltopdf.
+gem 'wkhtmltopdf-binary', '~> 0.9.9.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

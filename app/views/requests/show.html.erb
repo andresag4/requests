@@ -71,9 +71,11 @@
               <% end %>
           <% when @request.resume? %>
               <%= f.fields_for :resume, @request.resume do |resume| %>
-                  <%= render 'resume_form', f: resume %>
+                  <%= render 'resume_form', f: resume, request: @request   %>
               <% end %>
           <% end %>
+
+          <%= render 'request_files', f: f, request: @request %>
 
           <%= f.fields_for :general_information, @request.general_information do |general_information| %>
               <%= render 'general_information_form', f: general_information %>

@@ -15,15 +15,15 @@
 #
 
 class Request < ActiveRecord::Base
-  has_one :project
-  has_one :complaint
-  has_one :audience
-  has_one :resume
-  has_one :management
-  has_one :contact
-  has_one :general_information
+  has_one :project, dependent: :destroy
+  has_one :complaint, dependent: :destroy
+  has_one :audience, dependent: :destroy
+  has_one :resume, dependent: :destroy
+  has_one :management, dependent: :destroy
+  has_one :contact, dependent: :destroy
+  has_one :general_information, dependent: :destroy
 
-  has_many :request_files
+  has_many :request_files, dependent: :destroy
 
   belongs_to :user
   belongs_to :area
@@ -63,5 +63,12 @@ class Request < ActiveRecord::Base
     end
 
     self.update_attributes(folio: "#{folio_name}#{self.id}")
+  end
+
+  def assign_json_attributes(params)
+    attributes = params[:request][:resume_attributes].slice(:work_objective, :experience)
+    self.resume.work_objective = attributes[:work_objective]
+    self.resume.experience = attributes[:experience]
+    self.resume.profile = attributes
   end
 end

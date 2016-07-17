@@ -40,6 +40,7 @@
                   <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_request_path(request), class: 'btn btn-flat btn-xs bg-blue' %>
                   <%= link_to '<i class="fa fa-trash"></i>'.html_safe, request, method: :delete,
                               data: {confirm: 'Are you sure?'}, class: 'btn btn-flat btn-xs bg-red' %>
+                  <%= link_to '<i class="fa fa-file-pdf-o"></i>'.html_safe, generate_request_pdf_path(request), method: :post, class: 'btn btn-flat btn-xs bg-purple' %>
                 </div>
               </td>
             </tr>

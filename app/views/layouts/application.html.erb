@@ -7,8 +7,9 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta content='<%= user_signed_in? ? current_user.id : '' %>' name='user-id'/>
-  <%= favicon_link_tag(source='food-logo.png') %>
+  <%#= favicon_link_tag(source='food-logo.png') %>
   <%= javascript_tag "window.locale = #{I18n.locale.to_s.inspect};" %>
+  <%= javascript_tag "window.I18n = #{current_translations.to_json.html_safe};" %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   <%= csrf_meta_tags %>
