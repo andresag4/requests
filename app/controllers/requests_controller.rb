@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_request, only: [:show, :edit, :update, :destroy, :generate_request_pdf]
 
   # GET /requests
   # GET /requests.json
@@ -101,6 +101,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user_id = current_user.id
+    @request.assign_json_attributes(params) if @request.resume?
 
     respond_to do |format|
       if @request.save
@@ -117,6 +118,7 @@ class RequestsController < ApplicationController
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update
+    @request.assign_json_attributes(params) if @request.resume?
     respond_to do |format|
       if @request.update(request_params)
         format.html { redirect_to @request, notice: 'Request was successfully updated.' }
@@ -136,6 +138,16 @@ class RequestsController < ApplicationController
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def generate_request_pdf
+    pdf_name = current_user.email + '_' + Time.now.strftime('%Y%d%m_%H%M%S') + '.pdf'
+    html = render_to_string(action: :generate_pdf, layout: false)
+    pdf = WickedPdf.new.pdf_from_string(html)
+
+    send_data(pdf,
+              filename: pdf_name,
+              disposition: 'attachment')
   end
 
   private
@@ -160,8 +172,8 @@ class RequestsController < ApplicationController
                                     resume_attributes: [:id, :category_id,
                                                         studies_attributes: [:id, :institution, :degree, :end_study, :_destroy],
                                                         abilities_attributes: [:id, :name, :_destroy],
-                                                        languages_attributes: [:id, :name, :percentage, :_destroy],],
+                                                        languages_attributes: [:id, :name, :percentage, :_destroy]],
 
-                                    request_files_attributes: [:file])
+                                    request_files_attributes: [:id, :file, :_destroy])
   end
 end

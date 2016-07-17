@@ -1,0 +1,8 @@
+es:
+ activerecord:
+   attributes:
+     resume:
+       work_objective: Objetivo del trabajo
+       work_area: Área de trabajo
+       work_subarea: Subárea de trabajo
+       experience: Experiencia

@@ -67,7 +67,7 @@
           <% end %>
       <% when request.resume? %>
           <%= f.fields_for :resume, request.resume do |resume| %>
-              <%= render 'resume_form', f: resume %>
+              <%= render 'resume_form', f: resume, request: @request  %>
           <% end %>
       <% when request.management? %>
           <%= f.fields_for :management, request.management do |management| %>

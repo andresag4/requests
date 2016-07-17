@@ -19,4 +19,8 @@ class Resume < ActiveRecord::Base
   accepts_nested_attributes_for :languages, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :studies, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :abilities, allow_destroy: true, reject_if: :all_blank
+
+  attr_accessor :work_objective, :experience
+
+  validates_presence_of :work_objective, :experience
 end

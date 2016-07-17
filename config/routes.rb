@@ -75,25 +75,27 @@ Rails.application.routes.draw do
       get '/project_resumes', to: 'requests#index_resumes', as: :index_resumes
       get '/project_managements', to: 'requests#index_managements', as: :index_managements
 
+      post '/requests/generate_request_pdf/:id', to: 'requests#generate_request_pdf', as: :generate_request_pdf
+
+      # Generate the seed for the States, Cities, and Colonies based on an excel file.
+      post '/application/importation', to: 'application#importation', as: :importation
+
+      # Get a list of actions that a controller has.
+      get '/permissions/new/get_controller_actions', to: 'permissions#get_controller_actions', as: :get_controller_actions
+
+      # Generate the seeds of the permissions and its relations with roles
+      post '/permissions/generate_seeds', to: 'permissions#generate_seeds', as: :generate_seeds
+
+      # Displays the selected rol with his permissions
+      get '/roles/:role_id/permissions', to: 'roles#role_permissions', as: :role_permissions
+
+      # Makes the relations of a role with the permissions.
+      post '/roles/:role_id/assign_permissions', to: 'roles#assign_permissions', as: :assign_permissions
+
       resources :requests, except: [:new]
     end
 
     # Allows the execution of the back button in the login options.
     get '/login', to: 'devise/seasons#new'
   end
-
-
-  post '/application/importation', to: 'application#importation', as: :importation
-
-  # Get a list of actions that a controller has.
-  get '/permissions/new/get_controller_actions', to: 'permissions#get_controller_actions', as: :get_controller_actions
-
-  # Generate the seeds of the permissions and its relations with roles
-  post '/permissions/generate_seeds', to: 'permissions#generate_seeds', as: :generate_seeds
-
-  # Displays the selected rol with his permissions
-  get '/roles/:role_id/permissions', to: 'roles#role_permissions', as: :role_permissions
-
-  # Makes the relations of a role with the permissions.
-  post '/roles/:role_id/assign_permissions', to: 'roles#assign_permissions', as: :assign_permissions
 end
