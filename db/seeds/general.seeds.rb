@@ -128,6 +128,6 @@ names = [
 ]
 
 names.each do |name|
-  Category.create(name: name.split.map(&:capitalize).join(' '), data_type: :complaint)
-  Category.create(name: name.split.map(&:capitalize).join(' '), data_type: :resume)
+  Category.create(name: name, data_type: :complaint)
+  Category.create(name: name, data_type: :resume)
 end

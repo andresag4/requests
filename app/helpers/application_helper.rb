@@ -35,4 +35,12 @@ module ApplicationHelper
     base64 = Base64.encode64(asset.to_s).gsub(/\s+/, "")
     "data:#{asset.content_type};base64,#{Rack::Utils.escape(base64)}"
   end
+
+  def get_birthdate(request)
+    if request.general_information
+      l request.general_information.birthdate, format: :custom
+    else
+      ''
+    end
+  end
 end

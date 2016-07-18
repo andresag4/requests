@@ -214,8 +214,8 @@ en:
     ssh_key: SSH key
     not_available: This option is available until the page is created.
     generate_ssh_key: Generate new SSH key
-    create: Crear
-    cancel: Cancelar
+    create: Create
+    cancel: Cancel
   number:
     currency:
       format:

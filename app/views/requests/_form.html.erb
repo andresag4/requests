@@ -2,10 +2,17 @@
   <div class="box-header with-border">
     <h3 class="box-title"><%= t('.title') %></h3>
     <% if request.complaint? %>
-        <div class="pull-right box-tools">
-          <a href="javascript:;" class="btn btn-flat btn-default" data-toggle="tooltip" title="Solo los campos necesarios permanecerán obligatorios.">
-            Anonimo </a>
-        </div>
+        <% if request.general_information.anonymous %>
+            <div class="pull-right box-tools">
+              <a href="javascript:;" class="btn btn-flat btn-info anonymous-btt" data-toggle="tooltip" title="Solo los campos necesarios permanecerán obligatorios.">
+                Anónimo </a>
+            </div>
+        <% else %>
+            <div class="pull-right box-tools">
+              <a href="javascript:;" class="btn btn-flat btn-default anonymous-btt" data-toggle="tooltip" title="Solo los campos necesarios permanecerán obligatorios.">
+                Anónimo </a>
+            </div>
+        <% end %>
     <% end %>
   </div>
   <!-- /.box-header -->
@@ -78,7 +85,7 @@
       <%= render 'request_files', f: f, request: request %>
 
       <%= f.fields_for :general_information, request.general_information do |general_information| %>
-          <%= render 'general_information_form', f: general_information %>
+          <%= render 'general_information_form', f: general_information, request: request %>
       <% end %>
 
       <%= f.fields_for :contact, request.contact do |contact| %>
