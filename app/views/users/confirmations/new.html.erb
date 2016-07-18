@@ -5,7 +5,6 @@
   <div class="login-box-body">
     <p class="login-box-msg">¿No recibiste el correo de confirmación? Escribe tu correo y el correo se mandara nuevamente.</p>
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-        <%= devise_error_messages! %>
         <div class="form-group has-feedback">
           <%= f.email_field :email, autofocus: true,
                             value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
