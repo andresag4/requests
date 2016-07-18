@@ -79,7 +79,7 @@ Rails.application.configure do
 
   config.assets.raise_runtime_errors = true
   config.action_controller.asset_host = 'intense-stream-93294.herokuapp.com'
-  config.action_mailer.asset_host = 'intense-stream-93294.herokuapp.com'
+  config.action_mailer.asset_host = 'http://intense-stream-93294.herokuapp.com'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
