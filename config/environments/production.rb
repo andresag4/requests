@@ -78,24 +78,24 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.assets.raise_runtime_errors = true
-  config.action_controller.asset_host = 'localhost:3000'
-  config.action_mailer.asset_host = 'http://localhost:3000'
+  config.action_controller.asset_host = 'intense-stream-93294.herokuapp.com'
+  config.action_mailer.asset_host = 'intense-stream-93294.herokuapp.com'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
   # Devise default url options.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'intense-stream-93294.herokuapp.com', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
       address: 'smtp.gmail.com',
       port: 587,
-      domain: ENV['GMAIL_DOMAIN'],
+      domain: 'gmail.com',
       authentication: :plain,
       enable_starttls_auto: true,
-      user_name: ENV['GMAIL_USERNAME'],
-      password: ENV['GMAIL_PASSWORD']
+      user_name: 'uachrecaptcha@gmail.com',
+      password: 'tron900'
   }
 end

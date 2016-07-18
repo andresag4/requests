@@ -34,5 +34,7 @@ module Gobierno
 
     # Contains controllers that must be treated different by the General Policy.
     config.x.special_controllers = %w(home application)
+
+    config.serve_static_assets = true
   end
 end
