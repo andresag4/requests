@@ -1,0 +1,41 @@
+<div class="login-box">
+  <div class="login-logo">
+    Control de <b>Gestión</b>
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Escribe la nueva contraseña de tu cuenta.</p>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), validate: true, class: 'form-control',
+                 html: {method: :put}) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="form-group">
+          <div class="input-icon">
+            <%= f.password_field :password, class: 'form-control placeholder-no-fix', placeholder: t('.new_password'),
+                                 autofocus: true, autocomplete: 'off', id: 'Password' %>
+          </div>
+          <% if @minimum_password_length %>
+              <em><%= t('.minimum_char', char: @minimum_password_length) %></em>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <div class="input-icon">
+            <%= f.password_field :password_confirmation, class: 'form-control placeholder-no-fix',
+                                 placeholder: t('.password_confirm'), autocomplete: 'off' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="progress">
+            <div id="StrengthProgressBar" class="progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-6">
+          <%= f.button "#{ t('helpers.send')}".html_safe,
+                       class: 'btn btn-default btn-block btn-flat' %>
+        </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->

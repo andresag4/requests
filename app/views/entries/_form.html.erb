@@ -1,0 +1,26 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Entrada</h3>
+    <div class="box-tools">
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <%= form_for(entry, html: {class: 'form-horizontal'}, validate: true) do |f| %>
+      <div class="box-body">
+        <div class="form-group">
+          <%= f.label :name, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.text_field :name, class: 'form-control', autofocus: true %>
+          </div>
+        </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <div class="col-sm-offset-2">
+          <%= f.button t('helpers.create'), class: 'btn btn-flat btn-success' %>
+          <%= link_to t('helpers.cancel'), entries_path, class: 'btn btn-flat btn-danger' %>
+        </div>
+      </div>
+  <% end %>
+</div>

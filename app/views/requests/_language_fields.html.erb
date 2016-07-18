@@ -1,0 +1,16 @@
+<div class="nested-fields col-md-12">
+  <div class="group-form row">
+    <div class="col-md-7 no-padding-right">
+      <%= f.text_field :name, class: 'form-control phone-mask', placeholder: t('.language') %>
+    </div>
+    <div class="col-md-5">
+      <div class="inline-flex">
+        <%= f.text_field :percentage, class: 'form-control extension-mask', placeholder: t('.percentage'),
+                         type: 'number', min: '0', max:'100' %>
+        <%= link_to_remove_association '<i class="fa fa-times"></i>'.html_safe, f, class: 'btn btn-flat btn-default',
+                                       title: t('.destroy') %>
+      </div>
+    </div>
+  </div>
+  <br/>
+</div>

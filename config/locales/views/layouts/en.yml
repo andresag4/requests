@@ -1,0 +1,14 @@
+en:
+  layouts:
+    javascript_check:
+      title: JavaScript is disabled!
+      message: For a better user experience is necessary to enable JavaScript execution in your browser settings.
+        Once activated just click the Reload button.
+      btn: Reload
+    browser_check:
+      title: You're still using %{name} on the version %{version}?
+      message_html: Your browser's version isn't the best one to be using ContentMS. <br>
+        We recomend you update the browser or use a diferent one. <br>
+        This are some options we sugest.
+    application:
+      copyright: All rights reserved.

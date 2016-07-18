@@ -1,0 +1,46 @@
+en:
+  requests:
+    form:
+      title: General information
+      folio: Folio
+      reception_date: Reception Date
+      data_type: Request Type
+      user_id: Capturist
+      entry_id: Entry
+    ability_fields:
+      ability: ability
+      destroy: Destroy ability
+    language_fields:
+      language: Language
+      percentage: Percentage
+      destroy: Destroy language
+    study_fields:
+      institution: Institution
+      degree: Degree
+      end_study: End study
+      destroy: Destroy study
+    resume_form:
+      title: Resume
+      abilities: Abilities
+      studies: Studies
+      languages: Languages
+      add_studies: Add studies
+      add_languages: Add languages
+      add_abilities: Add abilities
+    audience_form:
+      title: Audience
+    management_form:
+      title: Management
+    complaint_form:
+      title: Complaint or Denunciation
+    contact_form:
+      title: Contact
+    file_form:
+      title: Files
+      name: File
+    request_files:
+      add: Add file
+    general_information_form:
+      title: General information
+    project_form:
+      title: Project

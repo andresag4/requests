@@ -1,0 +1,21 @@
+<div class="login-box">
+  <div class="login-logo">
+    Control de <b>Gestión</b>
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">¿Olvidaste tu contraseña? Escribe tu correo y te mandaremos un correo con el enlace para realizarlo</p>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-group has-feedback">
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Correo electronico' %>
+          <span class="fa fa-envelope-o form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-offset-6 col-xs-6">
+            <%= f.button 'Solicitar contraseña', class: 'btn btn-default btn-block btn-flat' %>
+          </div><!-- /.col -->
+        </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->

@@ -1,27 +1,38 @@
 source 'https://rubygems.org'
 
 ruby '2.3.0'
-#ruby-gemset=cms-gemset
+#ruby-gemset=government-gemset
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '1.3.11'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.5.3'
+
+# Use pace of loading process
+gem 'icheck-rails', '~> 1.0.2.2'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -112,6 +123,18 @@ gem 'bootstrap-daterangepicker-rails', '~> 0.1.2'
 
 # Gem browser validation
 gem 'browser', '~> 2.0.2'
+
+# Pg is the Ruby interface to the PostgreSQL RDBMS.
+gem 'pg', '~> 0.18.4'
+
+# Roo implements read access for all common spreadsheet types.
+gem 'roo', '~> 1.13.2'
+
+# Wicked PDF uses the shell utility wkhtmltopdf to serve a PDF file to a user from HTML.
+gem 'wicked_pdf', '~> 1.0.6'
+
+# A wrapper for wkhtmltopdf.
+gem 'wkhtmltopdf-binary', '~> 0.9.9.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

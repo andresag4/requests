@@ -1,0 +1,150 @@
+<div>
+  <center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" bgcolor="#eaeced">
+      <tbody>
+      <tr style="display:none!important; max-height:0!important; line-height:0!important;">
+        <td valign="top" align="top" style="display:none!important; max-height:0!important; line-height:0!important;">
+          <div style="color:inherit; font-size:inherit; line-height:inherit; margin:inherit; padding:inherit;"></div>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" valign="top">
+          <table width="600" border="0" cellpadding="0" cellspacing="0" valign="top">
+            <tbody>
+            <tr>
+              <td align="center" valign="top">
+                <table width="580" border="0" cellpadding="0" cellspacing="0" valign="top">
+                  <tbody>
+                  <tr height="0">
+                    <td align="center" valign="top">
+                      <div style="color:inherit; font-size:inherit;
+                          line-height:inherit; margin:inherit; padding:inherit;">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr style="height:40px; font-size:1px!important; line-height:1px!important; display:block;">
+                    <td>&nbsp;</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <table width="96.8%" border="0" cellpadding="0" cellspacing="0" valign="top">
+
+                  <tbody>
+                  <tr>
+                    <td align="center">
+                    </td>
+                  </tr>
+
+                  <tr style="height:25px; font-size:1px!important; line-height:1px!important; display:block;">
+                    <td>&nbsp;</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" valign="top">
+          <table width="580" border="0" cellpadding="0" cellspacing="0" valign="top" style="overflow:hidden!important;">
+            <tbody>
+            <tr>
+              <td align="center" valign="top" width=580">
+                <div style="font-size:40px!important; color:black!important;
+                    font-family:'Roboto',sans-serif!important; height: 100px; padding-top: 40px;
+                    font-weight: 200; width:60%!important; margin:30px!important; ">
+                  Control de <b>Gestión</b>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <h1 style="margin:0!important; font-family:'Open Sans',sans-serif!important; font-size:34px;
+              background-color: white!important; color:#252b33!important; font-weight:200!important;
+              line-height:1.4!important; width:580px;">
+          </h1></td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <h1 style="margin:0!important; font-family:'Open Sans',sans-serif!important; font-size:34px;
+              background-color: white!important; color:#252b33!important; font-weight:200!important;
+              line-height:1.4!important; width:580px;">
+            <%= t('users.mailer.confirmation_instructions.welcome', name: @user.full_name) %>
+          </h1></td>
+      </tr>
+
+      <tr height="0">
+        <td align="center" valign="top">
+          <table width="580" border="0" cellpadding="0" cellspacing="0" valign="top">
+            <tbody>
+
+            <tr>
+              <section style="background:#fff; border-radius:0 0 .25rem .25rem; box-shadow:0 1px 0 rgba(0,0,0,.25);
+                  padding:2rem 2rem 1rem; margin:0 auto 3rem; border:1px solid #e8e8e8; width:515px;
+                  border-top: none!important;">
+                <div>
+                  <div>
+                    <h3>
+                      <b><%= t('users.mailer.confirmation_instructions.third_step_sub_title') %></b>
+                    </h3>
+                    <p style="font-size:16px!important; text-align:justify;">
+                      <%= t('users.mailer.confirmation_instructions.third_step_message') %>
+                    </p>
+                    <div style="height:80px">
+                      <div align="center">
+                        <a href="#">
+                          <div src="" width="50.0" height="47.0" style="border:0!important;">
+                            <%= link_to "<span style='color:#fff; background:#f2be35; padding:12px 20px;'>#{
+                            t('users.mailer.confirmation_instructions.confirm')}</span>".html_safe,
+                                        confirmation_url(@resource, confirmation_token: @token),
+                                        style: 'text-decoration:none; font-size:18px; text-align:center;
+                                vertical-align:middle; font-weight:normal;' %>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </tr>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr height="50">
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td align="center" valign="top">
+
+          <table width="580" border="0" cellpadding="0" cellspacing="0" valign="top" style="overflow:hidden!important;">
+            <tbody>
+            <tr>
+              <td align="center" valign="top">
+                <div>
+                  <p style="margin-bottom:1em; font-family:Geneva,Verdana,Arial,Helvetica,sans-serif; text-align:center;
+                      font-size:10px; line-height:1.45; color:#7e8890; display:block;">
+                    Todos los derechos Reservados
+                  </p>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+      </tbody>
+    </table>
+  </center>
+</div>

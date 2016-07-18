@@ -1,0 +1,8 @@
+$('#permission_action').empty()
+<% unless @actions and @actions.any? %>
+    .append('<option><%=	t('helpers.select.prompt') %></option>')
+<% else %>
+    <% @actions.each do |action| %>
+      .append('<option value="<%= action %>"><%= action.gsub(':', '').titleize %></option>')
+    <% end %>
+<% end %>;

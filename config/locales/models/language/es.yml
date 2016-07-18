@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    attributes:
+      language:
+        name: Nombre
+        percentage: Porcentaje

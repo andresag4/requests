@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      audience:
+        subject: Subject
+        description: Descripction
+        category_id: Category

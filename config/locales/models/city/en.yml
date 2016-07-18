@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    attributes:
+      city:
+        name: Name
+        state_id: State

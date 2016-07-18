@@ -1,0 +1,17 @@
+es:
+  permissions:
+    index:
+      title: Permisos
+      resource: el permiso
+      name: Nombre
+      controller: Controlador
+      action: Actividades
+      one: Permiso
+      other: Permisos
+    form:
+      title: Permiso
+      role: Rol
+      back: Ir a permisos
+      resource: permiso
+  breadcrumbs:
+    permissions: Permisos

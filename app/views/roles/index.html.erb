@@ -1,0 +1,55 @@
+<div class="col-md-10 col-md-offset-1">
+  <section class="content-header">
+    <h1>Listado de Roles</h1>
+  </section>
+  <section class="content">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">
+          <%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_role_path, class: 'btn btn-flat bg-green' %>
+        </h3>
+        <div class="box-tools">
+          <div class="input-group input-group-sm" style="width: 150px;">
+            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @roles.each do |role| %>
+              <tr>
+                <td><%= role.name %></td>
+                <td><%= role.key %></td>
+                <td><%= role.description %></td>
+                <td class="actions">
+                  <div>
+                    <%= link_to '<i class="fa fa-search"></i>'.html_safe, role, class: 'btn btn-flat btn-xs bg-green' %>
+                    <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_role_path(role), class: 'btn btn-flat btn-xs bg-blue' %>
+                    <%= link_to '<i class="fa fa-exchange"></i>'.html_safe, role_permissions_url(role.id), class: 'btn btn-flat btn-xs bg-orange' %>
+                    <%= link_to '<i class="fa fa-trash"></i>'.html_safe, role, method: :delete,
+                                data: {confirm: 'Are you sure?'}, class: 'btn btn-flat btn-xs bg-red' %>
+                  </div>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div><!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <%= custom_paginator @roles, 'no-margin pull-right' %>
+      </div>
+    </div>
+  </section>
+</div>

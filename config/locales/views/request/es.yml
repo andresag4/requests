@@ -1,0 +1,46 @@
+es:
+  requests:
+    form:
+      title: Información General
+      folio: Folio
+      reception_date: Fecha de Recepción
+      data_type: Tipo de Solicitud
+      user_id: Capturista
+      entry_id: Entrada
+    ability_fields:
+      ability: Habilidad
+      destroy: Eliminar habilidad
+    language_fields:
+      language: Idioma
+      percentage: Porcentaje
+      destroy: Eliminar idioma
+    study_fields:
+      institution: Institución
+      degree: Grado de estudio
+      end_study: Fin de estudio
+      destroy: Eliminar estudio
+    resume_form:
+      title: Curriculum
+      abilities: Habilidades
+      studies: Estudios
+      languages: Idiomas
+      add_studies: Añadir estudio
+      add_languages: Añadir idioma
+      add_abilities: Añadir habilidad
+    audience_form:
+      title: Audiencia
+    management_form:
+      title: Gestoría
+    complaint_form:
+      title: Queja o Denuncia
+    contact_form:
+      title: Contacto
+    file_form:
+      title: Archivos
+      name: Archivo
+    request_files:
+      add: Agregar archivo
+    general_information_form:
+      title: Información General
+    project_form:
+      title: Proyecto

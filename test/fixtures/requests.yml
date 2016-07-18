@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  folio: MyString
+  reception_date: 2016-07-09
+  type: 
+  user_id: 
+  entry_id: 
+
+two:
+  folio: MyString
+  reception_date: 2016-07-09
+  type: 
+  user_id: 
+  entry_id: 

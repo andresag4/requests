@@ -1,0 +1,14 @@
+es:
+  errors:
+    messages:
+      taken_in_past: "fue su contraseña anterior!"
+      equal_to_current_password: "debe ser diferente a la contraseña actual!"
+      password_format: "debe contener mayúsculas, minúsculas y dígitos"
+  devise:
+    invalid_captcha: "Captcha inválido."
+    password_expired:
+      updated: "Su nueva contraseña ha sido guardada."
+      change_required: "Su contraseña ha expirado. Por favor renueve su contraseña."
+    failure:
+      session_limited: 'Tiene una sesión abierta en otro explorador. Favor de iniciar sesión de nuevo para continuar en este explorador.'
+      expired: 'Su cuenta ha expirado por inactividad. Favor de contactar al administrador.'

@@ -1,0 +1,67 @@
+body {
+  background-color: #ddd !important;
+}
+
+.login-page, .register-page {
+  background: #ddd !important;
+}
+/*
+.login-page, .register-page {
+  background: none;
+}
+
+#wallpaper {
+  .food {
+    background: transparent no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: blur(5px);
+    -webkit-filter: blur(15px);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    animation: imageAnimation 36s linear infinite 0s;
+
+  }
+  .food:nth-child(1) {
+    background-color: silver;
+  }
+  .food:nth-child(2) {
+    background-color: grey;
+    animation-delay: 6s;
+  }
+  .food:nth-child(3) {
+    background-color: #898989;
+    animation-delay: 12s;
+  }
+  .food:nth-child(4) {
+    background-color: #898989;
+    animation-delay: 18s;
+  }
+  .food:nth-child(5) {
+    background-color: #6d6d6d;
+    animation-delay: 24s;
+  }
+  .food:nth-child(6) {
+    background-color: #242424;
+    animation-delay: 30s;
+  }
+}
+@keyframes imageAnimation {
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  8% { opacity: 1; animation-timing-function: ease-out; }
+  17% { opacity: 1 }
+  25% { opacity: 0 }
+  100% { opacity: 0 }
+}
+*/

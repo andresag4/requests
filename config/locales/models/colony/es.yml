@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    attributes:
+      colony:
+        name: Nombress
+        postcode: Código postal

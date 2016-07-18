@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      contact:
+        state_id: State
+        city_id: City
+        colony_id: Colony
+        postcode: Postcode
+        street: Street
+        internal_number: Internal number
+        external_number: External numbers

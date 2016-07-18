@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reques_id: 
+  category_id: 
+
+two:
+  reques_id: 
+  category_id: 

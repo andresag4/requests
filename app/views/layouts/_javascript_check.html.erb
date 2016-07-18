@@ -1,0 +1,20 @@
+<div class="modal fade in" tabindex="-1" aria-hidden="false" data-backdrop="static"
+     style="display: block; background-color: rgba(0, 0, 0, 0.5);">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <i class="fa fa-exclamation-triangle" style="font-size:30px; margin:5px 10px 0 0;"></i><%= t '.title' %>
+        </h4>
+      </div>
+      <div class="modal-body" style="max-height:600px; overflow-y:auto;">
+        <div class="row">
+          <div class="col-md-12">
+            <p><%= t '.message' %></p>
+            <%= link_to t('.btn'), '', class: 'btn green-haze pull-right' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
