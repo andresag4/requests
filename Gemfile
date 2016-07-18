@@ -6,9 +6,6 @@ ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.11'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -144,6 +141,8 @@ gem 'wkhtmltopdf-binary', '~> 0.9.9.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
