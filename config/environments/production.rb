@@ -97,7 +97,6 @@ Rails.application.configure do
       domain: 'gmail.com',
       authentication: :plain,
       enable_starttls_auto: true,
-      openssl_verify_mode: 'none',
       user_name: 'uachrecaptcha@gmail.com',
       password: 'tron9000'
   }
